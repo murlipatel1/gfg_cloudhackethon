@@ -57,7 +57,7 @@ body{
   height: 100%;
   width: 100%;
   background: linear-gradient(to right, #002B5B, #256D85); /*--------------------------*/
-  opacity: 0.3;
+  opacity: 0.01;
   z-index: 12;
 }
 .container .cover::after{
