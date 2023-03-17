@@ -10,7 +10,7 @@ body {
 	background-color: #cbddf0;
 }
 
-.user-container {
+.container {
 	margin: 0 auto;
 	width: 80%;
 	max-width: 600px;
@@ -26,7 +26,7 @@ body {
 }
 
 
-.sub-container1 {
+.sub-container2 {
 	margin-bottom: 10px;
 	display: flex;
 	align-items: center;
@@ -115,7 +115,7 @@ button {
 		width: 100%;
 	}
 
-	.sub-container1 {
+	.sub-container2 {
 		flex-direction: column;
 	}
 
@@ -133,8 +133,8 @@ button {
 
 }
 
-/* Notification Preferences */
 
+/* Notification Preferences */
 .preferences-container {
 	margin-top: 40px;
 }
@@ -192,8 +192,8 @@ button {
 }
 
 .preferences-container hr {
-	border: dotted #cbddf0 5px;
+	border: dotted #cbddf0 6px;
 	border-bottom: none;
-	width: 5%;
+	width: 6%;
 	margin: 20px auto;
 }
