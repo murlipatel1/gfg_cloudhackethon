@@ -5,11 +5,13 @@ const bodyParser = require("body-parser");
 const app = express();
 
 
-app.use(express.static("Client"));
+// app.use(express.static("Client"));
+app.use(express.static("C:/Users/Shruti Mishra/Documents/1.Webdev Projects/GFG Cloud Hackathon MAIN/gfg_cloudhackethon/Client/login and signup/"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",function(req,res){
-    res.sendFile(__dirname + "/login.html");
+    // res.sendFile(__dirname + "/login.html");
+    res.sendFile("C:/Users/Shruti Mishra/Documents/1.Webdev Projects/GFG Cloud Hackathon MAIN/gfg_cloudhackethon/Client/login and signup/login.html");
 });
 
 app.post("/", function(req,res){
