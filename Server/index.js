@@ -1,20 +1,25 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
+
 const app = express();
 
 
+app.use(express.static("Client"));
+app.use(bodyParser.urlencoded({extended:true}));
+
 app.get("/",function(req,res){
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/login.html");
 });
 
 app.post("/", function(req,res){
 
-    var v2 = req.body.num2;
-    var v3 = req.body.num1;
-    var v1 = req.body.num1;
-    var v1 = req.body.num1;
-    // var result = n1 + n2;
+    var name = req.body.fullName;
+    var phone = Number(req.body.phNumber);
+    var email = req.body.eMail;
+    var pw = req.body.passWord;
 
-    res.send("Result of calculation(sum) is : " + result);
+    console.log(name,phone,email,pw);
 });
 
 app.listen(3000,function(){
