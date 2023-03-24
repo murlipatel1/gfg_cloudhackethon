@@ -1,15 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 // const request = require("request");
-
+const login = '../Client/login and signup/'
 const app = express();
 
-
-app.use(express.static("Client"));
+// app.use(express.static("Client"));
+app.use(express.static("D:/0000 gfg hackethon/gfg_cloudhackethon/Client/login and signup/"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.get("/",function(req,res){
-    res.sendFile(__dirname + "/login.html");
+app.get("/",(req,res)=>{
+    // res.sendFile(__dirname + "/login.html");
+    res.sendFile("D:/0000 gfg hackethon/gfg_cloudhackethon/Client/login and signup/login.html");
+    // res.sendFile( login + "/login.html");
+    // res.sendFile(login)
 });
 
 app.post("/", function(req,res){
