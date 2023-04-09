@@ -1,12 +1,12 @@
 import React from 'react'
-import '../Finance Planning/plan.css'
+import './plan.css'
 
 const Plan = () => {
   return (
     <>
     <div className='body2 html1'>
     <div className="container">
-		<div className="calculator top">
+		<div className="calculator top2">
 			<h2>Bike</h2>
 			<form>
 				<label htmlFor="expected-amount">Expected Amount:</label>

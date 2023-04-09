@@ -5,7 +5,7 @@ const Calc = () => {
     <>
     <div className='body2 html1'>
     <div className="container">
-		<div className="calculator top1">
+		<div className="calculator top3">
 			<h2>Bike</h2>
 			<form>
 				<label htmlFor="expected-amount">Expected Amount:</label>

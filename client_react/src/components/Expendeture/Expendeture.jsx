@@ -5,7 +5,8 @@ const Expendeture = () => {
     <>
 	<div className="body2">
     <div className="container">
-		<h1>Expendeture</h1> 
+		<div className='top1'>
+		<h1 >Expendeture</h1> 
 		<div>
         <h2>Loan</h2> 
 		<div className="sub-container">
@@ -72,6 +73,7 @@ const Expendeture = () => {
 	<div className="sub-container">
 		<button className="change-password">Save Changes</button>
 		<button className="delete-account">Discard Changes</button>
+	</div>
 	</div>
 	</div>
 	</div>

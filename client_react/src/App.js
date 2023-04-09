@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <Routes>
-        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/" element={<Login />} />
         <Route exact path="/expendeture" element={<Expendeture />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/calc" element={<Calc />} />

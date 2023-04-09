@@ -1,8 +1,6 @@
-
-
 body {
-	margin: 250px;
-	height: auto;
+	margin-top: 250px;
+	height: 0;
 	padding: 0;
 	font-family: sans-serif;
 	background-color: #cbddf0;
