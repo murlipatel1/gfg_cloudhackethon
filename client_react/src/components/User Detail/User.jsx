@@ -104,7 +104,6 @@ const User = () => {
 			<button className="delete-account">Delete Account</button>
 		</div>
 	</div>
-    
     </div>
     </>
   )
