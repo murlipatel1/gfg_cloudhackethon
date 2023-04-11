@@ -1,8 +1,10 @@
 import React from 'react'
 import '../Finance Calculator/calc.css'
+import SideBar from '../SideBar/SideBar'
 const Calc = () => {
   return (
     <>
+	<SideBar />
     <div className='body2 html1'>
     <div className="container">
 		<div className="calculator top3">

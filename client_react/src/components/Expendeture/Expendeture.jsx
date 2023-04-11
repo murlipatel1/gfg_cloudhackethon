@@ -1,8 +1,10 @@
 import React from 'react'
 import './expendeture.css'
+import SideBar from '../SideBar/SideBar'
 const Expendeture = () => {
   return (
     <>
+	<SideBar />
 	<div className="body2">
     <div className="container">
 		<div className='top1'>

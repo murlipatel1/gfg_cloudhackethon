@@ -1,9 +1,11 @@
 import React from 'react'
 import './plan.css'
+import SideBar from '../SideBar/SideBar'
 
 const Plan = () => {
   return (
     <>
+	<SideBar />
     <div className='body2 html1'>
     <div className="container">
 		<div className="calculator top2">

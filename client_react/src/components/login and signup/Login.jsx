@@ -1,7 +1,14 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import './login.css'
 import image from '../login and signup/gradient.png'
+
 const Login = () => {
+    let navigate = useNavigate()
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        navigate('/expendeture')
+    }
   return (
     <>
     {/* <div>Login</div> */}
@@ -14,7 +21,6 @@ const Login = () => {
                 <div className="text">
                     <span className="text-1">JOIN US</span>
                     <span className="text-2">Start a Valuable Journey With Us</span>
-                    {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
                 </div>
             </div>
             <div className="back">
@@ -46,8 +52,8 @@ const Login = () => {
 
                             <div className="text"><a href="#">Forgot password?</a></div>
 
-                            <div className="button input-box">
-                                <input type="submit" value="Login"/>
+                            <div className="button input-box" >
+                                <input type="submit" value="Login" onClick={handleSubmit}/>
                             </div>
 
                             <div

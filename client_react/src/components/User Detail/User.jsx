@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './user.css'
+import SideBar from '../SideBar/SideBar';
 const User = () => {
 
     const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,7 @@ const User = () => {
 
   return (
     <>
+	<SideBar />
     <div>
     <div className="user-container">
 		<h1>User Profile</h1>
@@ -47,6 +49,7 @@ const User = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={handleCloseModal}>
+				{/* &times; */}
             </span>
             <div class="notifications-container">
             <span className="notification-message">Your notification message goes here</span>
