@@ -30,7 +30,8 @@ const User = () => {
             <input type="email" id="email" name="email" />
 
             <label for="address">Address:</label>
-            <textarea id="address" name="address"></textarea>
+            <input type="text" id="address" name="address" />
+            {/* <textarea id="address" name="address"></textarea> */}
           </div>
           <div className="sub-container1">
             <label for="aadhar">Aadhar VID:</label>
