@@ -10,7 +10,7 @@ import Stats from "./components/Statistics/stats";
 function App() {
   return (
     <>
-      <Routes>
+      <Routes> 
         <Route exact path="/" element={<Login />} />
         <Route exact path="/expendeture" element={<Expendeture />} />
         <Route exact path="/login" element={<Login />} />
