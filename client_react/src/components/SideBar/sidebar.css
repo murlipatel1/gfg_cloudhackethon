@@ -1,0 +1,140 @@
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* font-family: "Poppins", sans-serif; */
+
+/* CSS for the parent div */
+* {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+/* .xs\:w-4\/5 {
+    width: 80%;
+  } */
+
+.flex {
+  display: flex;
+  margin-top: 10px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-3 {
+  gap: 0.9rem;
+}
+
+.p-3 {
+  padding-bottom: 0.75rem;
+}
+
+.bgg {
+  background-color: rgba(14, 41, 249, 0.14);
+}
+
+/* CSS for the Icon component */
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+/* CSS for the h2 tag */
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* CSS for the parent div */
+/* .min-h-screen {
+    min-height: 100vh;
+  } */
+
+.w-fit {
+  width: fit-content;
+}
+
+/* .bg-primary {
+    background-color: #6092ff;
+  } */
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.font-Roboto {
+  font-family: Roboto, sans-serif;
+}
+
+/* CSS for the nested div */
+.mt-6 {
+  /* background-color: #045157; */
+  margin-top: 1.5rem;
+
+  /* margin-bottom: 100px; */
+}
+
+.fixed {
+  position: fixed;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* CSS for the h1 tag */
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* CSS for the nested div */
+.mt-8 {
+  margin-top: 10rem;
+}
+
+.space-y-4 > :not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* CSS for the button */
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.bg-secondary {
+  background-color: #002b5b;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-white {
+  color: #fff;
+}
+
+/* CSS for the parent div */
+.lg\:w-4\/5 {
+  width: 80%;
+}
