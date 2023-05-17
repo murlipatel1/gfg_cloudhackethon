@@ -49,7 +49,7 @@ const Expendeture = () => {
 
               <hr className="myhr" />
               <div>
-                <h3>Stock</h3>
+                <h2>Stock</h2>
                 <br />
                 <div className="sub-container">
                   <label for="name">Stocks:</label>
@@ -66,7 +66,7 @@ const Expendeture = () => {
               </div>
               <hr className="myhre" />
               <div>
-                <h3>Mutual Funds</h3>
+                <h2>Mutual Funds</h2>
                 <br />
                 <div className="sub-container">
                   <label for="name">Stocks:</label>
