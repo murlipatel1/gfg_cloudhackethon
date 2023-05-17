@@ -8,33 +8,58 @@
 
 .body2e {
   /* min-height: 80vh; */
+  width: 0;
+  height: 0;
   margin: 0;
   box-sizing: border-box;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+  background-color: rgb(172, 41, 41);
+  
+}
+.container-exp{
+  
   background-color: #cbddf0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .containere {
-  width: 80%;
-  max-width: 600px;
+  /* width: max-content; */
+  /* width: 80%; */
+  /* max-width: 600px; */
   /* height: 600px; */
   /* padding: 20px; */
-  background-color: #fff;
-  border-radius: 10px;
+  /* background-color: #b73333; */
+  /* border-radius: 10px; */
   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 55%;
+  /* transform: translate(-50%, -50%); */
   /* scroll-behavior: smooth; */
   /* overflow-y: scroll; */
 }
 
+.ajubaju3 {
+  margin-left: 20rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.expendeturecontainer{
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 30rem;
+  margin-left: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+}
 .top1 {
-  margin-top: 32rem;
+  margin-top: 30rem;
 }
 
 .myhr {
@@ -51,6 +76,7 @@
   width: 3%;
   margin: 25px auto;
 }
+
 .sub-container {
   margin-right: 10rem;
   margin-bottom: 10px;
@@ -84,6 +110,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+.buttonalignment{
+  margin-left: 25rem;
 }
 
 @media only screen and (max-width: 480px) {

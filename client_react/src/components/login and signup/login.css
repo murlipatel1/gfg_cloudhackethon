@@ -207,7 +207,7 @@
   text-align: center;
   margin-top: 25px;
 }
-.container #flip {
+.containerl #flip {
   display: none;
 }
 @media (max-width: 730px) {

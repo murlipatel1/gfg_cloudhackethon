@@ -32,6 +32,7 @@
   justify-content: center;
   align-items: center;
   max-height: auto;
+  
   /* margin-top: 5rem; */
 }
 
@@ -41,8 +42,14 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   width: 30rem;
-  margin-right: 2rem;
+  margin-right: 4rem;
   margin-bottom: 3rem;
+}
+
+.ajubaju2 {
+  margin-left: 14rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .hhome {

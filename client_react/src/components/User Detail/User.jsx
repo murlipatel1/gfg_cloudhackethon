@@ -15,7 +15,7 @@ const User = () => {
   return (
     <>
       <SideBar active={"users"} />
-      <div>
+      <div className="body4">
         <div className="user-container">
           <h1>User Profile</h1>
           <div className="sub-container1">
@@ -48,7 +48,7 @@ const User = () => {
             <div className="modal">
               <div className="modal-content">
                 <span className="close" onClick={handleCloseModal}>
-                  {/* &times; */}
+                  &times;
                 </span>
                 <div class="notifications-container">
                   <span className="notification-message">

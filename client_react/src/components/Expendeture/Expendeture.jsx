@@ -7,10 +7,10 @@ const Expendeture = () => {
       <SideBar active={"expendeture"} />
       <div className="container-exp">
         <div className="containere">
-          <div className="ajubaju">
-            <div className="">
+          <div className="ajubaju3">
+            <div className="expendeturecontainer">
               <h1>Expenditure</h1>
-              <hr className="myhr" />
+              <hr className="myhr"/>
               <div>
                 <h2>Loan</h2>
                 <br />
@@ -44,7 +44,7 @@ const Expendeture = () => {
                 </div>
               </div>
             </div>
-            <div className="">
+            <div className="expendeturecontainer">
               <h1>Stock Management</h1>
 
               <hr className="myhr" />
@@ -83,7 +83,7 @@ const Expendeture = () => {
               </div>
             </div>
           </div>
-          <div className="sub-container">
+          <div className="sub-container buttonalignment">
             <button className="change-password">Save Changes</button>
             <button className="delete-account">Discard Changes</button>
           </div>

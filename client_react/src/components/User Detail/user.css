@@ -6,7 +6,7 @@
 .body4 {
   box-sizing: border-box;
   /* margin: 0; */
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   /* padding: 0; */
   font-family: "Poppins", sans-serif;
   background-color: #cbddf0;
@@ -14,8 +14,8 @@
 
 .user-container {
   margin: 5px auto;
-  width: 80%;
-  max-width: 800px;
+  /* width: 80%; */
+  max-width: 50rem;
   /* max-height: 900px; */
   /* padding: 20px; */
   /* background-color: #cbddf0; */
@@ -23,9 +23,9 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: absolute;
-  top: 5%;
-  left: 30%;
+  /* position: absolute; */
+  /* top: 5%; */
+  /* left: 30%; */
   /* transform: translate(-50%, -50%); */
 }
 
@@ -103,8 +103,8 @@ button {
 
 .notification {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -0px;
+  right: 27rem;
   background-color: #3498db;
   color: #fff;
   padding: 10px;
@@ -185,6 +185,7 @@ button {
 
 .preference-options {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding-top: 15px;
   text-align: left;
@@ -256,9 +257,9 @@ button {
 }
 
 .close {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position:absolute;
+  top: -30px;
+  right: 23rem;
   padding: 10px;
   cursor: pointer;
   /* chnages made here */

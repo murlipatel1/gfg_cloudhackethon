@@ -8,7 +8,7 @@ const Plan = () => {
       <SideBar active={"plan"} />
       <div className="body2p html1">
         <div className="containerp">
-          <div className="ajubaju top2">
+          <div className="ajubaju2 top2">
             <div className="calculatorp">
               <h2>🏍️Two-Wheeler</h2>
               <form>
@@ -46,7 +46,7 @@ const Plan = () => {
               </form>
             </div>
           </div>
-          <div className="ajubaju top2">
+          <div className="ajubaju2 top2">
             <div className="calculatorp hhome">
               <h2>🏠Home</h2>
               <form>
