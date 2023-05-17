@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 // 1. images not loading
 // 2. All icons including: follow us , and those 3
 // 3. chk in login signup showing again
+// 4. logic.js file also working or not?
 
 export default function HomePage(props) {
   const navigate = useNavigate();
