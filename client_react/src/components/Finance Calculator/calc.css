@@ -1,0 +1,109 @@
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* font-family: "Poppins", sans-serif; */
+
+/* Base font size */
+.html2 {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 768px) {
+  .html2 {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .html2 {
+    font-size: 40%;
+  }
+}
+
+.body2c {
+  margin: 0;
+  padding: 0;
+  /* background-color: #cbddf0; */
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+.containerc {
+  background-color: #cbddf0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 5rem; */
+  /* max-height: 700px; */
+}
+.ajubaju {
+  margin-left: 12rem;
+  display: flex;
+  flex-direction: row;
+}
+.calculatorc {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 30rem;
+  margin-left: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+}
+
+.top3 {
+  margin-top: 3rem;
+}
+.calculatorc h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calculatorc form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculatorc .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calculatorc label {
+  margin-right: 1rem;
+}
+
+.calculatorc input[type="number"] {
+  background-color: #cbddf0;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 20rem;
+}
+
+.calculatorc button[type="submit"] {
+  background: linear-gradient(to right, #002b5b, #256d85);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.calculatorc .center {
+  margin: 0 auto;
+}
+
+.calculatorc button[type="submit"]:hover {
+  background: linear-gradient(180deg, #023875, #256d85);
+}
+
+.calculatorc input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0 0.5rem #023875;
+}
