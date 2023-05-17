@@ -78,16 +78,17 @@
 }
 
 .sub-container {
-  margin-right: 10rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-label {
+.containere label {
   display: inline-block;
-  margin-right: 10px;
+  /* margin-right: -3rem; */
   width: 120px;
   font-weight: bold;
   font-size: 1rem;
