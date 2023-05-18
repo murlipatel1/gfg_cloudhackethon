@@ -28,18 +28,20 @@ const Calc = () => {
                     type="number"
                     id="expected-amount"
                     name="expected-amount"
+                    placeholder="Rs"
                     value={inputValue}
                     onChange={handleInputChange}
                   />
                 </div>
                 <div className="row">
                   <label htmlFor="result">Result:</label>
-                  <input
+                  <input type="number" id="result" name="result" disabled />
+                  {/* <input
                     type="number"
                     id="result"
                     name="result"
                     value={outputValue}
-                  />
+                  /> */}
                 </div>
                 <button type="submit" className="center">
                   Calculate
@@ -55,6 +57,7 @@ const Calc = () => {
                     type="number"
                     id="expected-amount"
                     name="expected-amount"
+                    placeholder="Rs"
                   />
                 </div>
                 <div className="row">
@@ -77,6 +80,7 @@ const Calc = () => {
                     type="number"
                     id="expected-amount"
                     name="expected-amount"
+                    placeholder="Rs"
                   />
                 </div>
                 <div className="row">
@@ -91,11 +95,21 @@ const Calc = () => {
               <form>
                 <div className="row">
                   <label htmlFor="amount">Amount:</label>
-                  <input type="number" id="amount" name="amount" />
+                  <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    placeholder="Rs"
+                  />
                 </div>
                 <div className="row">
                   <label htmlFor="balance">Balance:</label>
-                  <input type="number" id="balance" name="balance" />
+                  <input
+                    type="number"
+                    id="balance"
+                    name="balance"
+                    placeholder="Rs"
+                  />
                 </div>
                 <div className="row">
                   <label htmlFor="period">Period:</label>
