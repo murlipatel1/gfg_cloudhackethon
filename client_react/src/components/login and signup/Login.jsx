@@ -6,6 +6,13 @@ import image from "../login and signup/gradient.png";
 import { Icon } from "@iconify/react";
 import mylogo from "./mylogo.png";
 
+/*
+  To Do:
+  1) Change all form input parameters to variables with useState hooks
+  2) Change onSubmit Buttons to handleSubmitLogin and handleSubmitRegister for both form types
+  3) Ensure that authToken is stored in localStorage or some other area of frontend
+*/
+
 const Login = () => {
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
