@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 /* font-family: "Poppins", sans-serif; */
 
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
@@ -21,7 +21,7 @@
   background-color: #cbddf0;
   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
 }
-.container-exp{
+.container-exp {
   background-color: #cbddf0;
 }
 
@@ -48,7 +48,7 @@
   flex-direction: row;
 }
 
-.expendeturecontainer{
+.expendeturecontainer {
   background-color: #fff;
   padding: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
@@ -58,10 +58,22 @@
   margin-right: 2rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
-
 }
 .top1 {
   margin-top: 30rem;
+}
+
+.counter {
+  width: 40px;
+  height: auto;
+  background: linear-gradient(to right, #002b5b, #256d85);
+  color: #fff;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  /* margin-top: 10px; */
+  padding: 2px 5px 2px 5px;
 }
 
 .myhr {
@@ -96,9 +108,19 @@
   font-size: 1rem;
 }
 
+.dropbox-menu {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #bdc3c7;
+  font-size: 1rem;
+  flex-grow: 1;
+  background-color: #cbddf0;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="number"],
 textarea {
   padding: 10px;
   border-radius: 5px;
@@ -115,7 +137,7 @@ button {
   font-size: 1rem;
 }
 
-.buttonalignment{
+.buttonalignment {
   margin-left: 25rem;
 }
 
@@ -133,6 +155,7 @@ button {
   input[type="text"],
   input[type="tel"],
   input[type="email"],
+  input[type="number"],
   textarea {
     width: 100%;
   }
