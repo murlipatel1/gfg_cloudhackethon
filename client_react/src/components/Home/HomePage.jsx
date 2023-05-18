@@ -100,7 +100,11 @@ export default function HomePage(props) {
             <div className="row">
               <div className="col-md-4">
                 <div className="feature-item">
-                  <Icon icon="clarity:mobile-phone-solid" color="blue" className="imagesize"/>
+                  <Icon
+                    icon="clarity:mobile-phone-solid"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Mobile App</h3>
                   <p>
                     Manage your finances on the go with our mobile app,
@@ -110,7 +114,11 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                <Icon icon="mdi:finance" color="blue" className="imagesize"/>
+                  <Icon
+                    icon="mdi:finance"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Investment Tools</h3>
                   <p>
                     Maximize your investment returns with our suite of
@@ -120,8 +128,11 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                
-                <Icon icon="mdi:server-shield" color="blue" className="imagesize"/>
+                  <Icon
+                    icon="mdi:server-shield"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Security</h3>
                   <p>
                     Your data is safe with us. We use the latest encryption and
@@ -187,8 +198,11 @@ export default function HomePage(props) {
             <div className="row">
               <div className="col-md-4">
                 <div className="feature-item">
-                
-                  <Icon icon="carbon:finance" color="blue" className="imagesize"/>
+                  <Icon
+                    icon="carbon:finance"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Investment Management</h3>
                   <p>
                     Manage your finances on the go with our mobile app,
@@ -198,7 +212,11 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                <Icon icon="solar:hand-money-linear" color="blue" className="imagesize"/>
+                  <Icon
+                    icon="solar:hand-money-linear"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Financial Planning</h3>
                   <p>
                     Maximize your investment returns with our suite of
@@ -208,7 +226,11 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                <Icon icon="fluent:money-calculator-24-filled" color="blue" className="imagesize" />
+                  <Icon
+                    icon="fluent:money-calculator-24-filled"
+                    color="#007bff"
+                    className="imagesize"
+                  />
                   <h3>Financial Calculating</h3>
                   <p>
                     Your data is safe with us. We use the latest encryption and
