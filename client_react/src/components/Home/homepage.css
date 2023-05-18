@@ -473,3 +473,7 @@ footer .copyright {
 .imagesize {
   font-size: 5rem;
 }
+.imagesize2 {
+  font-size: 2rem;
+  cursor: pointer;
+}

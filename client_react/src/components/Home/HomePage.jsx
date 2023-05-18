@@ -409,24 +409,32 @@ export default function HomePage(props) {
                 <h4>Follow Us</h4>
                 <ul className="social-icons">
                   <li>
-                    <a href="#">
-                      <i className="fab fa-facebook-f" />
-                    </a>
+                  <Icon
+                    icon="gg:facebook"
+                    color="#002b5b"
+                    className="imagesize2"
+                  />
                   </li>
                   <li>
-                    <a href="#">
-                      <i className="fab fa-twitter" />
-                    </a>
+                  <Icon
+                    icon="mdi:twitter"
+                    color="#002b5b"
+                    className="imagesize2"
+                  />
                   </li>
                   <li>
-                    <a href="#">
-                      <i className="fab fa-instagram" />
-                    </a>
+                  <Icon
+                    icon="ph:instagram-logo"
+                    color="#002b5b"
+                    className="imagesize2"
+                  />
                   </li>
                   <li>
-                    <a href="#">
-                      <i className="fab fa-linkedin-in" />
-                    </a>
+                  <Icon
+                    icon="uim:linkedin-alt"
+                    color="#002b5b"
+                    className="imagesize2"
+                  />
                   </li>
                 </ul>
               </div>

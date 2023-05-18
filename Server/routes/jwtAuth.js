@@ -40,9 +40,7 @@ router.post("/login", validInfo, async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
-      email
-    ]);
+    const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [email]);
 
     if (user.rows.length === 0) {
       return res.status(401).json("Invalid Credential");
@@ -56,6 +54,7 @@ router.post("/login", validInfo, async (req, res) => {
     if (!validPassword) {
       return res.status(401).json("Invalid Credential");
     }
+
     const jwtToken = jwtGenerator(user.rows[0].user_id);
     return res.json({ jwtToken });
   } catch (err) {
@@ -72,5 +71,14 @@ router.post("/verify", authorize, (req, res) => {
     res.status(500).send("Server error");
   }
 });
+
+router.get("/", async (req, res) => {
+  try {
+    const user = await pool.query("SELECT * FROM users");
+    res.json(user.rows);
+  } catch (err) {
+    res.status(500).send("Server error");
+  }
+})
 
 module.exports = router;

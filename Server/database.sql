@@ -74,6 +74,7 @@ VALUES
   (4000.00, 7000.00, 150000.00, 100000.00);
 
 
+
 CREATE TABLE userdetails (
   id serial primary key,
   user_id int,

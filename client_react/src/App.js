@@ -10,6 +10,7 @@ import HomePage from "./components/Home/HomePage";
 function App() {
   return (
     <>
+    <div className="apps">
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/expendeture" element={<Expendeture />} />
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/stats" element={<Stats />} />
         <Route exact path="/users" element={<User />} />
       </Routes>
+      </div>
     </>
   );
 }
