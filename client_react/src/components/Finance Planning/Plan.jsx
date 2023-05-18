@@ -21,10 +21,10 @@ const Plan = () => {
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  {/* <label htmlFor="result">Result:</label> */}
+                  {/* <input type="number" id="result" name="result" disabled /> */}
                 </div>
-                <button type="submit">Calculate</button>
+                {/* <button type="submit">Calculate</button> */}
               </form>
             </div>
             <div className="calculatorp">
@@ -39,10 +39,10 @@ const Plan = () => {
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  {/* <label htmlFor="result">Result:</label> */}
+                  {/* <input type="number" id="result" name="result" disabled /> */}
                 </div>
-                <button type="submit">Calculate</button>
+                {/* <button type="submit">Calculate</button> */}
               </form>
             </div>
           </div>
@@ -59,10 +59,10 @@ const Plan = () => {
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  {/*  <label htmlFor="result">Result:</label> */}
+                  {/* <input type="number" id="result" name="result" disabled /> */}
                 </div>
-                <button type="submit">Calculate</button>
+                {/* <button type="submit">Calculate</button> */}
               </form>
             </div>
             <div className="calculatorp">
@@ -81,12 +81,15 @@ const Plan = () => {
                   <input type="number" id="period" name="period" />
                 </div>
                 <div className="row">
-                  <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  {/* <label htmlFor="result">Result:</label> */}
+                  {/* <input type="number" id="result" name="result" disabled /> */}
                 </div>
-                <button type="submit">Calculate</button>
+                {/* <button type="submit">Calculate</button> */}
               </form>
             </div>
+          </div>
+          <div className="calculatorpp" >
+          <button type="submit">Submit</button>
           </div>
         </div>
       </div>

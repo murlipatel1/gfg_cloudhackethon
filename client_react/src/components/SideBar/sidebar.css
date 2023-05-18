@@ -60,6 +60,7 @@
   } */
 
 .px-3 {
+  /* margin-left: -10px; */
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -71,7 +72,7 @@
 /* CSS for the nested div */
 .mt-6 {
   /* background-color: #045157; */
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
 
   /* margin-bottom: 100px; */
 }
@@ -123,7 +124,7 @@
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  margin-top: 2rem;
+  margin-top: 2rem; 
 }
 
 .text-2xl {

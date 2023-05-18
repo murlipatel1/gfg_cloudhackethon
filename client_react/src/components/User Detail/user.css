@@ -103,7 +103,7 @@ button {
 
 .notification {
   position: absolute;
-  top: -0px;
+  top: 1rem;
   right: 27rem;
   background-color: #3498db;
   color: #fff;
@@ -258,7 +258,7 @@ button {
 
 .close {
   position:absolute;
-  top: -30px;
+  top: -10px;
   right: 23rem;
   padding: 10px;
   cursor: pointer;

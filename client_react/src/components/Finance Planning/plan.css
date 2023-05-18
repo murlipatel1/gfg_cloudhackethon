@@ -53,7 +53,7 @@
 }
 
 .hhome {
-  height: 25rem;
+  height: 15rem;
 }
 
 .top2 {
@@ -79,6 +79,8 @@
 }
 
 .calculatorp label {
+  width: 11rem;
+  margin-top: -2rem;
   margin-right: 1rem;
 }
 
@@ -91,7 +93,7 @@
   width: 20rem;
 }
 
-.calculatorp button[type="submit"] {
+.calculatorpp button[type="submit"] {
   background: linear-gradient(to right, #002b5b, #256d85);
   color: #fff;
   border: none;
@@ -99,6 +101,8 @@
   border-radius: 0.5rem;
   cursor: pointer;
   align-self: center;
+  margin-top: -29px;
+    margin-left: 155px;
 }
 
 .calculatorp button[type="submit"]:hover {
