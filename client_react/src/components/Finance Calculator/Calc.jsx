@@ -14,8 +14,10 @@ const Calc = () => {
   };
   return (
     <>
+    <header>
       <Navbar active={"calc"} />
       <SideBar active={"calc"} />
+      </header>
       <div className="body2c html2">
         <div className="containerc">
           <div className="ajubaju top3">

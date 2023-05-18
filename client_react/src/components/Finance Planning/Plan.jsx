@@ -6,8 +6,10 @@ import Navbar from "../Navbar/navbar";
 const Plan = () => {
   return (
     <>
+    <header>
       <Navbar active={"plan"} />
       <SideBar active={"plan"} />
+      </header>
       <div className="body2p html1">
         <div className="containerp">
           <div className="ajubaju2 top2">
@@ -108,6 +110,7 @@ const Plan = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };

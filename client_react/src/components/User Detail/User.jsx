@@ -15,11 +15,14 @@ const User = () => {
 
   return (
     <>
-      <Navbar active={"users"} />
-      <SideBar active={"users"} />
+      <header>
+        <Navbar active={"users"} />
+        <SideBar active={"users"} />
+      </header>
       <div className="body4">
         <div className="user-container">
-          <h1>User Profile</h1>
+
+          <h1 className="">User Profile</h1>
           <div className="sub-container1">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" />

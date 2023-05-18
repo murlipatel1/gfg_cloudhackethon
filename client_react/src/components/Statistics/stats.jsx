@@ -15,8 +15,10 @@ const Stats = () => {
   //   };
   return (
     <>
+    <header>
       <Navbar active={"stats"} />
       <SideBar active={"stats"} />
+      </header>
       <div className="body2c html2">
         <div className="containerc">
           <div className="ajubaju top3">

@@ -26,8 +26,10 @@ const Expendeture = () => {
   };
   return (
     <>
+    <header>
       <Navbar active={"expendeture"} />
       <SideBar active={"expendeture"} />
+      </header>
       <div className="container-exp">
         <div className="containere">
           <div className="ajubaju3">

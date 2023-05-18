@@ -144,7 +144,7 @@ const Login = () => {
                     <div className="text sign-up-text">
                       {" "}
                       Don't have an account?
-                      <label for="flip">Register Now</label>
+                      <label htmlFor="flip">Register Now</label>
                     </div>
                   </div>
                 </form>
@@ -241,7 +241,7 @@ const Login = () => {
 
                     <div className="text login-text">
                       Already have an account?
-                      <label for="flip">Login now</label>
+                      <label htmlFor="flip">Login now</label>
                     </div>
                   </div>
                 </form>
