@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 import image from "../login and signup/gradient.png";
-import { Icon, InlineIcon } from "@iconify/react";
+// import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
+import mylogo from "./mylogo.png";
+
 const Login = () => {
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -12,8 +15,8 @@ const Login = () => {
 
   const [input1Value, setInput1Value] = useState("");
   const [input2Value, setInput2Value] = useState("");
-  let colour = "black";
-  let icon = "mdi:password";
+  // let colour = "black";
+  // let icon = "mdi:password";
 
   function handleInputChange(event) {
     if (event.target.name === "password") {
@@ -24,8 +27,61 @@ const Login = () => {
   }
   const isPasswordMatch = input1Value === input2Value;
 
+  const navigateLogin = useNavigate();
+
+  const handleHome = () => {
+    navigateLogin("/");
+  };
+
+  const handleAbout = () => {
+    navigateLogin("/#about");
+  };
+
+  const handleServices = () => {
+    navigateLogin("/#services");
+  };
+
+  const handleFeatures = () => {
+    navigateLogin("/#features");
+  };
+
+  const handleContact = () => {
+    navigateLogin("/#contact");
+  };
+
   return (
     <>
+      <header>
+        <div className="container">
+          <div className="logo">
+            <a href="#hero">
+              <img src={mylogo} alt="Fintech Company Name" />
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li onClick={handleHome}>
+                <a href="#hero">Home</a>
+              </li>
+              <li onClick={handleAbout}>
+                <a href="#about">About</a>
+              </li>
+              <li onClick={handleServices}>
+                <a href="#services">Services</a>
+              </li>
+              <li onClick={handleFeatures}>
+                <a href="#features">Features</a>
+              </li>
+              <li onClick={handleContact}>
+                <a href="#contact">Contact US</a>
+              </li>
+              {/* <li className="login-signup" onClick={handleLogin}>
+                <a href=" ">Login/Signup</a>
+              </li> */}
+            </ul>
+          </nav>
+        </div>
+      </header>
       {/* <div>Login</div> */}
       <div className="body2l">
         <div className="containerl">
@@ -74,7 +130,7 @@ const Login = () => {
                     </div>
 
                     <div className="text">
-                      <a href="#">Forgot password?</a>
+                      <a href=" ">Forgot password?</a>
                     </div>
 
                     <div className="button input-box">
