@@ -5,6 +5,7 @@ import image from "../login and signup/gradient.png";
 // import { Icon, InlineIcon } from "@iconify/react";
 import { Icon } from "@iconify/react";
 import mylogo from "./mylogo.png";
+import axios from "axios";
 
 /*
   To Do:
@@ -38,62 +39,62 @@ const Login = () => {
 
     if (password === secPassword)
     {
-      const data = JSON.stringify({"email": email , "name": name, "password": password});
+      const data = JSON.stringify({"name": name, "email": email, "password": password});
       const options = {
           headers: {"content-type": "application/json"}
       }
-      //method to send data to backend and await response
-      let response = await fetch(`http://localhost:5000/authentication/register`, {
-          method: "POST",
-          options,
-          data,
-      })
 
-      let val = await response.json();
-      if (val.jwtToken)
+      let j = null;
+      axios.post("http://localhost:5000/authentication/register", data, options)
+      .then(async function (response) {
+          console.log(response);
+          j = await response.json()
+          console.log(j)
+      })
+      .catch(error => {
+          console.log(error);
+      });
+
+      console.log(j[0].jwtToken);
+      if (j[0].jwtToken)
       {
-        console.log("Successful Registration and JWT Generation!")
-        localStorage.setItem('jwt_token', val.jwtToken);
-        navigate("/expendeture")
-      }
-      else
-      {
-        console.log("Unsuccessful Registration and JWT Generation!")
+          localStorage.setItem('jwt_token', j[0].jwtToken)
+          navigate("/expendeture")
+      }else{
         navigate("/login")
       }
-    }
-    else
-    {
-      navigate("/login")  //redirect to login page again
-    }
-  } 
+    } 
+  }
 
   //make handle login submit section
   const handleLoginSubmit = async(e) =>{
     e.preventDefault();
 
     //method to send data to backend and await response
-    const data = JSON.stringify({"email": email , "password": password});
+    
+    const data = JSON.stringify({"email": email, "password": password});
     const options = {
         headers: {"content-type": "application/json"}
     }
-    let response = await fetch(`http://localhost:5000/authentication/login`, {
-        method: "POST",
-        options,
-        data,
-    })
 
-    let val = await response.json();
-    if (val.jwtToken)
+    let j = null;
+    axios.post("http://localhost:5000/authentication/login", data, options)
+    .then(async function (response) {
+        console.log(response);
+        j = await response.json()
+        console.log(j)
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+    console.log(j[0].jwtToken);
+    if (j[0].jwtToken)
     {
-      console.log("Successful Login and JWT Generation!")
-      localStorage.setItem('jwt_token', val.jwtToken)
-      navigate("/expendeture")
-    }
-    else
-    {
-      console.log("Unsuccessful Login and JWT Generation!")
-      navigate("/login")  //redirect to login page again
+        localStorage.setItem('jwt_token', j[0].jwtToken)
+        navigate("/expendeture")
+    }else{
+      navigate("/login")
     }
   }
 
