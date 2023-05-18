@@ -11,19 +11,99 @@ import mylogo from "./mylogo.png";
   1) Change all form input parameters to variables with useState hooks
   2) Change onSubmit Buttons to handleSubmitLogin and handleSubmitRegister for both form types
   3) Ensure that authToken is stored in localStorage or some other area of frontend
+
+  To Note: 
+  1) Phone Number in register form is ENTIRELY USELESS. Backend doesn't have phoneNumber as an attribute.
+
 */
 
 const Login = () => {
   let navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    navigate("/expendeture");
-  };
 
-  const [input1Value, setInput1Value] = useState("");
-  const [input2Value, setInput2Value] = useState("");
+  //Variables as useState-based variables
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [secPassword, setSecPassword] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState(0)  //useless attribute --> Not necessary but kept it as it has been kept in form
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   navigate("/expendeture");
+  // };
+
+  //make handle register submit section
+  const handleRegisterSubmit = async(e) =>{
+    e.preventDefault();
+
+    if (password === secPassword)
+    {
+      const data = JSON.stringify({"email": email , "name": name, "password": password});
+      const options = {
+          headers: {"content-type": "application/json"}
+      }
+      //method to send data to backend and await response
+      let response = await fetch(`http://localhost:5000/authentication/register`, {
+          method: "POST",
+          options,
+          data,
+      })
+
+      let val = await response.json();
+      if (val.jwtToken)
+      {
+        console.log("Successful Registration and JWT Generation!")
+        localStorage.setItem('jwt_token', val.jwtToken);
+        navigate("/expendeture")
+      }
+      else
+      {
+        console.log("Unsuccessful Registration and JWT Generation!")
+        navigate("/login")
+      }
+    }
+    else
+    {
+      navigate("/login")  //redirect to login page again
+    }
+  } 
+
+  //make handle login submit section
+  const handleLoginSubmit = async(e) =>{
+    e.preventDefault();
+
+    //method to send data to backend and await response
+    const data = JSON.stringify({"email": email , "password": password});
+    const options = {
+        headers: {"content-type": "application/json"}
+    }
+    let response = await fetch(`http://localhost:5000/authentication/login`, {
+        method: "POST",
+        options,
+        data,
+    })
+
+    let val = await response.json();
+    if (val.jwtToken)
+    {
+      console.log("Successful Login and JWT Generation!")
+      localStorage.setItem('jwt_token', val.jwtToken)
+      navigate("/expendeture")
+    }
+    else
+    {
+      console.log("Unsuccessful Login and JWT Generation!")
+      navigate("/login")  //redirect to login page again
+    }
+  }
+
+  //const [input1Value, setInput1Value] = useState("");
+  //const [input2Value, setInput2Value] = useState("");
   // let colour = "black";
   // let icon = "mdi:password";
+
+  /*
+  Comment --> I am still able to register with different passwords. Thus, am making changes.
 
   function handleInputChange(event) {
     if (event.target.name === "password") {
@@ -32,7 +112,8 @@ const Login = () => {
       setInput2Value(event.target.value);
     }
   }
-  const isPasswordMatch = input1Value === input2Value;
+*/
+  const isPasswordMatch = password === secPassword;
 
   const navigateLogin = useNavigate();
 
@@ -116,7 +197,12 @@ const Login = () => {
             <div className="form-content">
               <div className="login-form">
                 <div className="title">Login</div>
-                <form action="#">
+
+                {/*I am removing the action attribute from form right now. 
+                Main reason being the fact that we are going to use the handle Functions
+                to do it for us*/}
+
+                <form>
                   <div className="input-boxes">
                     <div className="input-box">
                       <Icon
@@ -125,7 +211,8 @@ const Login = () => {
                         className="text-3xl"
                       />
                       {/* //text to ntext */}
-                      <input type="etext" placeholder="Email-Id" required />
+                      {/*adding email variable made above in the form*/}
+                      <input type="etext" placeholder="Email-Id" required value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="input-box">
                       <Icon
@@ -133,7 +220,8 @@ const Login = () => {
                         color="black"
                         className="text-3xl"
                       />
-                      <input type="password" placeholder="Password" required />
+                      {/*adding password variable made above in the form*/}
+                      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
 
                     <div className="text">
@@ -143,8 +231,8 @@ const Login = () => {
                     <div className="button input-box">
                       <input
                         type="submit"
-                        value="Login"
-                        onClick={handleSubmit}
+                        //value="Login"
+                        onClick={handleLoginSubmit}
                       />
                     </div>
 
@@ -157,10 +245,14 @@ const Login = () => {
                 </form>
               </div>
 
-              <div action="/" className="register-form">
+              {/*I am removing the action attribute from form right now. 
+              Main reason being the fact that we are going to use the handle Functions
+              to do it for us*/}
+
+              <div className="register-form">
                 <div className="title">REGISTER</div>
 
-                <form action="#">
+                <form>
                   <div className="input-boxes">
                     <div className="input-box">
                       <Icon
@@ -170,8 +262,10 @@ const Login = () => {
                       />
                       <input
                         type="ntext" //text to ntext
-                        name="fullName"
+                        name="name"
                         placeholder="Name"
+                        value={name} 
+                        onChange={(e)=> setName(e.target.value)}  //adding name variable made above in the form
                         required
                       />
                     </div>
@@ -184,8 +278,10 @@ const Login = () => {
                       />
                       <input
                         type="number"
-                        name="phNumber"
+                        name="phoneNumber"
                         placeholder="Phone"
+                        value={phoneNumber} 
+                        onChange={(e)=> setPhoneNumber(e.target.value)}  //adding phoneNumber variable made above in the form
                         required
                       />
                     </div>
@@ -200,6 +296,8 @@ const Login = () => {
                         type="etext" //text to etext
                         name="email"
                         placeholder="Email-Id"
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}  //adding email variable made above in the form
                         required
                       />
                     </div>
@@ -214,8 +312,8 @@ const Login = () => {
                         type="password"
                         name="password"
                         placeholder="Password"
-                        value={input1Value}
-                        onChange={handleInputChange}
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} //adding password variable made above in the form
                       />
                     </div>
 
@@ -236,14 +334,16 @@ const Login = () => {
                       <input
                         type="password"
                         placeholder="Confirm Password"
-                        name="confirmpassword"
-                        value={input2Value}
-                        onChange={handleInputChange}
+                        name="secPassword"
+                        value={secPassword} 
+                        onChange={(e) => setSecPassword(e.target.value)}  //adding second password variable made above in the form
                       />
                     </div>
 
                     <div className="button input-box">
-                      <input type="submit" value="Register" />
+                      <input type="submit" 
+                      //value="Register" 
+                      onClick={handleRegisterSubmit}/>
                     </div>
 
                     <div className="text login-text">
