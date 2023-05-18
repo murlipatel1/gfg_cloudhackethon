@@ -2,16 +2,8 @@ import React from "react";
 import "./homepage.css";
 import flogo from "./flogo.jpg";
 import mylogo from "./mylogo.png";
-// import "./logic";
-// import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
-
-//Problems: if resolved plz explain how
-// 1. images not loading
-// 2. All icons including: follow us , and those 3
-// 3. chk in login signup showing again
-// 4. logic.js file also working or not?
 
 export default function HomePage(props) {
   const navigate = useNavigate();
@@ -26,14 +18,14 @@ export default function HomePage(props) {
         <header>
           <div className="container">
             <div className="logo">
-              <a href="#">
+              <a href="#hero">
                 <img src={mylogo} alt="Fintech Company Name" />
               </a>
             </div>
             <nav>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#hero">Home</a>
                 </li>
                 <li>
                   <a href="#about">About</a>
@@ -48,13 +40,13 @@ export default function HomePage(props) {
                   <a href="#contact">Contact US</a>
                 </li>
                 <li className="login-signup" onClick={handleLogin}>
-                  <a href="#">Login/Signup</a>
+                  <a href=" ">Login/Signup</a>
                 </li>
               </ul>
             </nav>
           </div>
         </header>
-        <section className="hero">
+        <section id="hero" className="hero">
           <div className="container">
             <div className="hero-content">
               <h1>Welcome to Cloud Capitalists!</h1>
@@ -62,7 +54,7 @@ export default function HomePage(props) {
                 We provide innovative solutions to help you manage your finances
                 and achieve your financial goals.
               </p>
-              <a href="#" className="btn btn-primary" onClick={handleLogin}>
+              <a href=" " className="btn btn-primary" onClick={handleLogin}>
                 Get Started
               </a>
             </div>
@@ -84,7 +76,7 @@ export default function HomePage(props) {
                   vulputate quam. Duis nec augue nec nulla pharetra sodales at
                   ac nisi.
                 </p>
-                <a href="#" className="btn btn-primary">
+                <a href=" " className="btn btn-primary">
                   Learn More
                 </a>
               </div>
@@ -297,7 +289,7 @@ export default function HomePage(props) {
                       <li>1 Budget</li>
                       <li>1 Goal</li>
                     </ul>
-                    <a href="#" className="btn btn-primary">
+                    <a href=" " className="btn btn-primary">
                       Choose Plan
                     </a>
                   </div>
@@ -409,32 +401,32 @@ export default function HomePage(props) {
                 <h4>Follow Us</h4>
                 <ul className="social-icons">
                   <li>
-                  <Icon
-                    icon="gg:facebook"
-                    color="#002b5b"
-                    className="imagesize2"
-                  />
+                    <Icon
+                      icon="gg:facebook"
+                      color="#002b5b"
+                      className="imagesize2"
+                    />
                   </li>
                   <li>
-                  <Icon
-                    icon="mdi:twitter"
-                    color="#002b5b"
-                    className="imagesize2"
-                  />
+                    <Icon
+                      icon="mdi:twitter"
+                      color="#002b5b"
+                      className="imagesize2"
+                    />
                   </li>
                   <li>
-                  <Icon
-                    icon="ph:instagram-logo"
-                    color="#002b5b"
-                    className="imagesize2"
-                  />
+                    <Icon
+                      icon="ph:instagram-logo"
+                      color="#002b5b"
+                      className="imagesize2"
+                    />
                   </li>
                   <li>
-                  <Icon
-                    icon="uim:linkedin-alt"
-                    color="#002b5b"
-                    className="imagesize2"
-                  />
+                    <Icon
+                      icon="uim:linkedin-alt"
+                      color="#002b5b"
+                      className="imagesize2"
+                    />
                   </li>
                 </ul>
               </div>
