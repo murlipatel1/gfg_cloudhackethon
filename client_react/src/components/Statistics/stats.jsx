@@ -13,7 +13,7 @@ const Stats = () => {
   //   };
   return (
     <>
-      <SideBar active={"calc"} />
+      <SideBar active={"stats"} />
       <div className="body2c html2">
         <div className="containerc">
           <div className="ajubaju top3">

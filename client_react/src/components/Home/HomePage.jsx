@@ -1,7 +1,7 @@
 import React from "react";
 import "./homepage.css";
-import "./flogo.jpg";
-import "./mylogo.png";
+import flogo from "./flogo.jpg";
+import mylogo from "./mylogo.png";
 // import "./logic";
 // import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,7 @@ export default function HomePage(props) {
           <div className="container">
             <div className="logo">
               <a href="#">
-                <img src="mylogo.png" alt="Fintech Company Name" />
+                <img src={mylogo} alt="Fintech Company Name" />
               </a>
             </div>
             <nav>
@@ -141,7 +141,7 @@ export default function HomePage(props) {
                     Sed ac neque nec eros vehicula consequat ut at odio."
                   </p>
                   <div className="testimonial-author">
-                    <img src="flogo.jpg" alt="Testimonial Author" />
+                    <img src={flogo} alt="Testimonial Author" />
                     <h4>John Doe</h4>
                     <span>CEO, XYZ Corporation</span>
                   </div>
