@@ -1,16 +1,19 @@
 import React from "react";
 import "./expendeture.css";
 import SideBar from "../SideBar/SideBar";
+import Navbar from "../Navbar/navbar";
+
 const Expendeture = () => {
   return (
     <>
+      <Navbar active={"expendeture"} />
       <SideBar active={"expendeture"} />
       <div className="container-exp">
         <div className="containere">
           <div className="ajubaju3">
             <div className="expendeturecontainer">
               <h1>Expenditure</h1>
-              <hr className="myhr"/>
+              <hr className="myhr" />
               <div>
                 <h2>Loan</h2>
                 <br />

@@ -2,6 +2,8 @@
 import "../Statistics/stats.css";
 import SideBar from "../SideBar/SideBar";
 import image from "./timeseriesgraph.png";
+import Navbar from "../Navbar/navbar";
+
 const Stats = () => {
   //   const [inputValue, setInputValue] = useState("");
   //   const [outputValue, setOutputValue] = useState("");
@@ -13,6 +15,7 @@ const Stats = () => {
   //   };
   return (
     <>
+      <Navbar active={"stats"} />
       <SideBar active={"stats"} />
       <div className="body2c html2">
         <div className="containerc">

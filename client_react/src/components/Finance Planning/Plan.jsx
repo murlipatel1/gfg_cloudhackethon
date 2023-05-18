@@ -1,10 +1,12 @@
 import React from "react";
 import "./plan.css";
 import SideBar from "../SideBar/SideBar";
+import Navbar from "../Navbar/navbar";
 
 const Plan = () => {
   return (
     <>
+      <Navbar active={"plan"} />
       <SideBar active={"plan"} />
       <div className="body2p html1">
         <div className="containerp">
@@ -88,8 +90,8 @@ const Plan = () => {
               </form>
             </div>
           </div>
-          <div className="calculatorpp" >
-          <button type="submit">Submit</button>
+          <div className="calculatorpp">
+            <button type="submit">Submit</button>
           </div>
         </div>
       </div>

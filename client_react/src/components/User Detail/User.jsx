@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./user.css";
 import SideBar from "../SideBar/SideBar";
+import Navbar from "../Navbar/navbar";
 const User = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -14,6 +15,7 @@ const User = () => {
 
   return (
     <>
+      <Navbar active={"users"} />
       <SideBar active={"users"} />
       <div className="body4">
         <div className="user-container">

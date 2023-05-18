@@ -54,7 +54,7 @@ const Login = () => {
       <header>
         <div className="container">
           <div className="logo">
-            <a href="#hero">
+            <a href="#hero" onClick={handleHome}>
               <img src={mylogo} alt="Fintech Company Name" />
             </a>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Finance Calculator/calc.css";
 import SideBar from "../SideBar/SideBar";
+import Navbar from "../Navbar/navbar";
 
 const Calc = () => {
   const [inputValue, setInputValue] = useState("");
@@ -13,6 +14,7 @@ const Calc = () => {
   };
   return (
     <>
+      <Navbar active={"calc"} />
       <SideBar active={"calc"} />
       <div className="body2c html2">
         <div className="containerc">
