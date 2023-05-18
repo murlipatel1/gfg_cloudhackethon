@@ -28,10 +28,20 @@ const User = () => {
             <input type="tel" id="phone" name="phone" maxlength="10" />
           </div>
           <div className="sub-container1">
+            <label for="date" className="date-label">
+              Date Of Birth:
+            </label>
+            <input type="date" id="date" name="date" />
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" />
+            {/* <textarea id="address" name="address"></textarea> */}
+          </div>
+          <div className="sub-container1">
+            <label for="address">Address 1:</label>
+            <input type="text" id="address" name="address" />
 
-            <label for="address">Address:</label>
+            <label for="address">Address 2:</label>
             <input type="text" id="address" name="address" />
             {/* <textarea id="address" name="address"></textarea> */}
           </div>

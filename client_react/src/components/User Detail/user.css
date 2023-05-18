@@ -45,9 +45,19 @@ label {
   font-size: 1rem;
 }
 
+.date-label {
+  display: inline-block;
+  margin-right: 78px;
+  /* margin-left: 20px; */
+  width: 140px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="date"],
 textarea {
   padding: 10px;
   border-radius: 5px;
@@ -104,7 +114,7 @@ button {
 .notification {
   position: absolute;
   top: 1rem;
-  right: 27rem;
+  right: 24rem;
   background-color: #3498db;
   color: #fff;
   padding: 10px;
@@ -140,6 +150,7 @@ button {
   input[type="text"],
   input[type="tel"],
   input[type="email"],
+  input[type="date"],
   textarea {
     width: 100%;
   }
@@ -257,7 +268,7 @@ button {
 }
 
 .close {
-  position:absolute;
+  position: absolute;
   top: -10px;
   right: 23rem;
   padding: 10px;
