@@ -5,6 +5,7 @@ import mylogo from "./mylogo.png";
 // import "./logic";
 // import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 //Problems: if resolved plz explain how
 // 1. images not loading
@@ -99,7 +100,7 @@ export default function HomePage(props) {
             <div className="row">
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-mobile-alt" />
+                  <Icon icon="clarity:mobile-phone-solid" color="blue" className="imagesize"/>
                   <h3>Mobile App</h3>
                   <p>
                     Manage your finances on the go with our mobile app,
@@ -109,7 +110,7 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-chart-line" />
+                <Icon icon="mdi:finance" color="blue" className="imagesize"/>
                   <h3>Investment Tools</h3>
                   <p>
                     Maximize your investment returns with our suite of
@@ -119,7 +120,8 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-shield-alt" />
+                
+                <Icon icon="mdi:server-shield" color="blue" className="imagesize"/>
                   <h3>Security</h3>
                   <p>
                     Your data is safe with us. We use the latest encryption and
@@ -185,7 +187,8 @@ export default function HomePage(props) {
             <div className="row">
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-mobile-alt" />
+                
+                  <Icon icon="carbon:finance" color="blue" className="imagesize"/>
                   <h3>Investment Management</h3>
                   <p>
                     Manage your finances on the go with our mobile app,
@@ -195,7 +198,7 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-chart-line" />
+                <Icon icon="solar:hand-money-linear" color="blue" className="imagesize"/>
                   <h3>Financial Planning</h3>
                   <p>
                     Maximize your investment returns with our suite of
@@ -205,7 +208,7 @@ export default function HomePage(props) {
               </div>
               <div className="col-md-4">
                 <div className="feature-item">
-                  <i className="fas fa-shield-alt" />
+                <Icon icon="fluent:money-calculator-24-filled" color="blue" className="imagesize" />
                   <h3>Financial Calculating</h3>
                   <p>
                     Your data is safe with us. We use the latest encryption and
