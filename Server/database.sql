@@ -81,5 +81,6 @@ CREATE TABLE userdetails (
   address varchar(255),
   aadharvid int,
   pannumber int,
+  dob date,
   FOREIGN key (user_id) references users(id)
 );
