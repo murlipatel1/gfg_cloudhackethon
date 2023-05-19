@@ -7,30 +7,13 @@ CREATE TABLE users(
   PRIMARY KEY (user_id)
 );
 
-CREATE SEQUENCE user_id_sequence
-   START WITH 1
-   INCREMENT BY 1
-   NO MAXVALUE
-   NO MINVALUE
-   CACHE 1;
+INSERT INTO users (user_id, user_name, user_email, user_password) VALUES
+(1, 'John Doe', 'johndoe@example.com', 'password123'),
+(2, 'Jane Smith', 'janesmith@example.com', 'abc123'),
+(3, 'Robert Johnson', 'robertjohnson@example.com', 'passw0rd'),
+(4, 'Emily Davis', 'emilydavis@example.com', 'securepass'),
+(5, 'Michael Brown', 'michaelbrown@example.com', 'qwerty123');
 
-ALTER TABLE users ALTER COLUMN user_id SET DEFAULT nextval('user_id_sequence');
-
-CREATE TABLE todos(
-  todo_id SERIAL,
-  user_id int,
-  description VARCHAR(255) NOT NULL,
-  PRIMARY KEY (todo_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
-
---fake users data
-
-insert into users (user_name, user_email, user_password) values ('Jacob', 'jacob@gmail.com', 'kthl8822');
-
---fake todos data
-
-insert into todos (user_id, description) values (1,'clean room');
 
 -- expenditure
 
@@ -72,6 +55,7 @@ VALUES
   (2000.00, 5000.00, 100000.00, 50000.00),
   (3000.00, 6000.00, 120000.00, 75000.00),
   (4000.00, 7000.00, 150000.00, 100000.00);
+
 
 
 

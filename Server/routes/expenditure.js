@@ -48,11 +48,9 @@ router.get("/", authorize, async (req, res) => {
         "DELETE FROM expenditure WHERE exp = $1 AND user_id = $2 RETURNING *",
         [id, req.user.id]
       );
-  
       if (deleteTodo.rows.length === 0) {
         return res.json("This todo is not yours");
       }
-  
       res.json("Todo was deleted");
     } catch (err) {
       console.error(err.message);
