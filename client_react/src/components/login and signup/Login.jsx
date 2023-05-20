@@ -57,7 +57,7 @@ const Login = () => {
       console.log(j[0].jwtToken);
       if (j[0].jwtToken) {
         localStorage.setItem('jwt_token', j[0].jwtToken)
-        navigate("/expendeture")
+        navigate("/users")
       } else {
         navigate("/login")
       }
