@@ -26,9 +26,9 @@ const Expendeture = () => {
   };
   return (
     <>
-    <header>
-      <Navbar active={"expendeture"} />
-      <SideBar active={"expendeture"} />
+      <header>
+        <Navbar active={"expendeture"} />
+        <SideBar active={"expendeture"} />
       </header>
       <div className="container-exp">
         <div className="containere">
@@ -42,15 +42,15 @@ const Expendeture = () => {
                 </h2>
                 <br />
                 <div className="sub-container">
-                  <label for="name">Unique Id:</label>
-                  <input type="text" id="uniqueid" name="uniqueid" />
+                  <label for="name">Loan Id:</label>
+                  <input type="text" id="loanid" name="loanid" />
                 </div>
                 <div className="sub-container">
                   <label for="ifsc">Ifsc Code:</label>
                   <input type="text" id="ifsc" name="ifsc" />
                 </div>
                 <div className="sub-container">
-                  <label for="email">Amount:</label>
+                  <label for="email">Loan Amount:</label>
                   <input
                     type="number"
                     id="loanamount"
@@ -87,7 +87,7 @@ const Expendeture = () => {
                   <div className="sub-container">
                     <label for="phone"> Card Number:</label>
                     <input
-                      type="text"
+                      type="number"
                       id="number"
                       name="number"
                       maxLength={16}
@@ -97,8 +97,8 @@ const Expendeture = () => {
                     <label for="name">Total Amount:</label>
                     <input
                       type="number"
-                      id="total-quantity"
-                      name="total-quantity"
+                      id="card_amount"
+                      name="card_amount"
                       placeholder="Rs"
                     />
                   </div>
@@ -119,24 +119,25 @@ const Expendeture = () => {
                 <br />
                 <div className="sub-container">
                   <label for="name">Stock Name:</label>
-                  <input type="text" id="name" name="name" />
+                  <input type="text" id="stock_name" name="stock_name" />
                 </div>
                 <div className="sub-container">
                   <label for="phone"> Stock Price:</label>
                   <input
                     type="number"
-                    id="stock-price"
-                    name="stock-price"
+                    id="stock_price"
+                    name="stock_price"
                     placeholder="Rs"
                   />
                 </div>
                 <div className="sub-container">
-                  <label for="name">Total Amount:</label>
+                  <label for="name">Net Stock Amount:</label>
                   <input
                     type="number"
-                    id="total-quantity"
-                    name="total-quantity"
+                    id="total_stock_price"
+                    name="total_stock_price"
                     placeholder="Rs"
+                    disabled
                   />
                 </div>
               </div>
@@ -151,24 +152,25 @@ const Expendeture = () => {
                 <br />
                 <div className="sub-container">
                   <label for="name">Stock Name:</label>
-                  <input type="text" id="name" name="name" />
+                  <input type="text" id="mf_name" name="mf_name" />
                 </div>
                 <div className="sub-container">
                   <label for="phone"> Stock Price:</label>
                   <input
                     type="number"
-                    id="stock-price"
-                    name="stock-price"
+                    id="mf-price"
+                    name="mf-price"
                     placeholder="Rs"
                   />
                 </div>
                 <div className="sub-container">
-                  <label for="name">Total Amount:</label>
+                  <label for="name">Net MF Amount:</label>
                   <input
                     type="number"
-                    id="total-quantity"
-                    name="total-quantity"
+                    id="total_mf_price"
+                    name="total_mf_price"
                     placeholder="Rs"
+                    disabled
                   />
                 </div>
               </div>
