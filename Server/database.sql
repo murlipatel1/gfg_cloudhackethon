@@ -82,5 +82,6 @@ CREATE TABLE userdetails (
   aadharvid int,
   pannumber int,
   dob date,
+  phonenumber int,
   FOREIGN key (user_id) references users(id)
 );

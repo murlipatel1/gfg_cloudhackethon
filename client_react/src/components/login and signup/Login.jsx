@@ -28,10 +28,6 @@ const Login = () => {
   const [secPassword, setSecPassword] = useState("")
   const [phoneNumber, setPhoneNumber] = useState(0)  //useless attribute --> Not necessary but kept it as it has been kept in form
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   navigate("/expendeture");
-  // };
 
   //make handle register submit section
   const handleRegisterSubmit = async (e) => {
@@ -45,7 +41,7 @@ const Login = () => {
 
       let j = null;
       axios.post("http://localhost:5000/authentication/register", data, options)
-        .then(async function (response) {
+        .then(async (response)=> {
           console.log(response);
           j = await response.json()
           console.log(j)
