@@ -49,18 +49,16 @@ const Login = () => {
           console.log(response);
           j = await response.json()
           console.log(j)
+          if (j.jwtToken) {
+            localStorage.setItem('jwt_token', j.jwtToken)
+            navigate("/users")
+          } else {
+            navigate("/login")
+          }
         })
         .catch(error => {
           console.log(error);
         });
-
-      console.log(j[0].jwtToken);
-      if (j[0].jwtToken) {
-        localStorage.setItem('jwt_token', j[0].jwtToken)
-        navigate("/users")
-      } else {
-        navigate("/login")
-      }
     }
   }
 
