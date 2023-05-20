@@ -26,7 +26,7 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [secPassword, setSecPassword] = useState("")
-  const [phoneNumber, setPhoneNumber] = useState(0)  //useless attribute --> Not necessary but kept it as it has been kept in form
+  const [phonenumber, setPhoneNumber] = useState(0)  //useless attribute --> Not necessary but kept it as it has been kept in form
 
 
   //make handle register submit section
@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
 
     if (password === secPassword) {
-      const data = JSON.stringify({ "name": name, "email": email, "password": password });
+      const data = JSON.stringify({ "name": name, "email": email, "password": password,"phonenumber":phonenumber });
       const options = {
         headers: { "content-type": "application/json" }
       }
@@ -303,8 +303,8 @@ const Login = () => {
                         type="number"
                         name="phoneNumber"
                         placeholder="Phone"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}  //adding phoneNumber variable made above in the form
+                        value={phonenumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}  //adding phoneNumber variable made above in the for
                         required
                       />
                     </div>
