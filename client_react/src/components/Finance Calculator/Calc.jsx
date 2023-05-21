@@ -4,14 +4,58 @@ import SideBar from "../SideBar/SideBar";
 import Navbar from "../Navbar/navbar";
 
 const Calc = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [outputValue, setOutputValue] = useState("");
+  const [bikePrice, setBikePrice] = useState('');
+  const [bikeemi, setbikeEMI] = useState('');
+  const [carPrice, setcarPrice] = useState('');
+  const [caremi, setcarEMI] = useState('');
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-    setOutputValue(value * 10);
+  const calculatebikeEMI = (e) => {
+    e.preventDefault()
+    const interestRatebike = 8
+    const principle = parseFloat(bikePrice);
+    const rate = parseFloat(interestRatebike) / 100 / 12;
+    const months = 24;
+    const emiAmount = (principle * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+    setbikeEMI(emiAmount.toFixed(2));
   };
+
+  const calculatecarEMI = (e) => {
+    e.preventDefault()
+    const interestRatecar =9
+    const principle = parseFloat(carPrice);
+    const rate = parseFloat(interestRatecar) / 100 / 12;
+    const months = 24;
+    const emiAmount = (principle * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+    setcarEMI(emiAmount.toFixed(2));
+  };
+
+  const [hPrice, sethPrice] = useState('');
+  const [hemi, sethEMI] = useState('');
+  const calculatehEMI = (e) => {
+    e.preventDefault()
+    const interestRatecar =9.6
+    const principle = parseFloat(hPrice);
+    const rate = parseFloat(interestRatecar) / 100 / 12;
+    const months = 24;
+    const emiAmount = (principle * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+    sethEMI(emiAmount.toFixed(2));
+  };
+
+
+  const [homePrice, sethomePrice] = useState('');
+  const [homeemi, sethomeEMI] = useState('');
+  const [interestRateHome, setinterestRateHome] = useState('');
+  const [monthshome, setmonthshome] = useState('');
+  const calculateHomeEMI = (e) => {
+    e.preventDefault()
+    // const interestRateHome=9
+    const principle = parseFloat(homePrice);
+    const rate = parseFloat(interestRateHome) / 100 / 12;
+    // const months = 24;
+    const emiAmount = (principle * rate * Math.pow(1 + rate, monthshome)) / (Math.pow(1 + rate, monthshome) - 1);
+    sethomeEMI(emiAmount.toFixed(2));
+  };
+
   return (
     <>
     <header>
@@ -31,13 +75,13 @@ const Calc = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
-                    value={inputValue}
-                    onChange={handleInputChange}
+                    value={bikePrice}
+                    onChange={(e)=>{setBikePrice(e.target.value)}}
                   />
                 </div>
                 <div className="row">
                   <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  <input type="number" id="result" name="result" value={bikeemi} disabled />
                   {/* <input
                     type="number"
                     id="result"
@@ -45,7 +89,7 @@ const Calc = () => {
                     value={outputValue}
                   /> */}
                 </div>
-                <button type="submit" className="center">
+                <button type="submit" className="center" onClick={calculatebikeEMI}>
                   Calculate
                 </button>
               </form>
@@ -60,13 +104,15 @@ const Calc = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
+                    value={carPrice}
+                    onChange={(e)=>{setcarPrice(e.target.value)}}
                   />
                 </div>
                 <div className="row">
                   <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  <input type="number" id="result" name="result" value={caremi} disabled />
                 </div>
-                <button type="submit" className="center">
+                <button type="submit" className="center" onClick={calculatecarEMI}>
                   Calculate
                 </button>
               </form>
@@ -83,13 +129,14 @@ const Calc = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
+                    value={hPrice} onChange={(e)=>{sethPrice(e.target.value)}}
                   />
                 </div>
                 <div className="row">
                   <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  <input type="number" id="result" name="result" value={hemi}  disabled />
                 </div>
-                <button type="submit">Calculate</button>
+                <button type="submit" onClick={calculatehEMI}>Calculate</button>
               </form>
             </div>
             <div className="calculatorc">
@@ -102,26 +149,28 @@ const Calc = () => {
                     id="amount"
                     name="amount"
                     placeholder="Rs"
+                    value={homePrice} onChange={(e)=>{sethomePrice(e.target.value)}}
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="balance">Balance:</label>
+                  <label htmlFor="balance">Interest:</label>
                   <input
                     type="number"
                     id="balance"
-                    name="balance"
-                    placeholder="Rs"
+                    name="interest"
+                    placeholder="%"
+                    value={interestRateHome} onChange={(e)=>{setinterestRateHome(e.target.value)}}
                   />
                 </div>
                 <div className="row">
                   <label htmlFor="period">Period:</label>
-                  <input type="number" id="period" name="period" />
+                  <input type="number" id="period" name="period" placeholder="Month" value={monthshome} onChange={(e)=>{setmonthshome(e.target.value)}} />
                 </div>
                 <div className="row">
                   <label htmlFor="result">Result:</label>
-                  <input type="number" id="result" name="result" disabled />
+                  <input type="number" id="result" name="result" value={homeemi} disabled />
                 </div>
-                <button type="submit">Calculate</button>
+                <button type="submit" onClick={calculateHomeEMI}>Calculate</button>
               </form>
             </div>
           </div>
