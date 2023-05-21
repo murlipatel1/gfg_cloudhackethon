@@ -7,7 +7,7 @@ import Navbar from "../Navbar/navbar";
 /*
   To Do: 
   1) Add UseState Based Variables --> Done. Added in form as well.
-  2) Create method to send a post request to backend
+  2) Create method to send a post request to Backend --> Done. Added method in both frontend and backend as well.
 
   Required Variables:
   1) Name  --> user_name(String) --> variable_name == name
