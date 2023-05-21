@@ -6,8 +6,8 @@ import Navbar from "../Navbar/navbar";
 
 /*
   To Do: 
-  1) Add UseState Based Variables --> Half Done. Now to add in form
-  2) create method to send a post request to backend
+  1) Add UseState Based Variables --> Done. Added in form as well.
+  2) Create method to send a post request to backend
 
   Required Variables:
   1) Name  --> user_name(String) --> variable_name == name
@@ -28,7 +28,7 @@ const User = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phonenumber, setPhoneNumber] = useState(0) 
-  const [dob, setDob] = useState()  //figure out a way to useState with dates
+  const [dob, setDob] = useState(new Date())  //not sure if this will work. Do check once.
   const [add1, setAdd1] = useState("")
   const [add2, setAdd2] = useState("")
   const [aadharvid, setAadharvid] = useState(0)
@@ -43,6 +43,34 @@ const User = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const handleSave = () => {
+    e.preventDefault();
+    let add = add1 + add2
+    const data = JSON.stringify({ "user_name": name, "email": email, "phonenumber": phonenumber, "dob": dob, "address": add, "aadharvid": aadharvid, "pannumber": pannumber});
+      const options = {
+        headers: { "content-type": "application/json",
+                    "jwt_token": localStorage.getItem('jwt_token') 
+                  }
+      }
+
+      let j = null;
+      axios.post("http://localhost:5000/userdetails/addinfo", data, options)
+      .then(async (response)=> {
+        console.log(response);
+        j = await response.json()
+        console.log(j)
+        if (j.jwtToken) {
+          localStorage.setItem('jwt_token', j.jwtToken)
+          navigate("/users")
+        } else {
+          navigate("/login")
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   return (
     <>
@@ -164,7 +192,8 @@ const User = () => {
           </div>
 
           <div className="sub-container2">
-            <button className="change-password"> Save </button>
+            {/* Clicking the button will trigger the method and will send a request to backend */}
+            <button className="change-password" onClick={handleSave}> Save </button>
           </div>
           {/* </div> */}
           <hr className="myhr" />
