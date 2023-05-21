@@ -60,12 +60,10 @@ const User = () => {
         console.log(response);
         j = await response.json()
         console.log(j)
-        if (j.jwtToken) {
-          localStorage.setItem('jwt_token', j.jwtToken)
-          navigate("/users")
-        } else {
-          navigate("/login")
+        if (j) {
+          console.log("Success")
         }
+        navigate("/users")
       })
       .catch(error => {
         console.log(error);

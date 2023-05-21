@@ -13,6 +13,9 @@ app.use("/authentication", require("./routes/jwtAuth"));
 app.use('/expenditure',require("./routes/expenditure"));
 app.use('/finance',require("./routes/finance_planning"));
 
+//Adding user Details route to add user details
+app.use('/userdetails', require("./routes/userdetails"));
+
 app.listen(5000, () => {
   console.log(`Server is starting on port 5000`);
 });
