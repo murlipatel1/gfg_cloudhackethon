@@ -60,7 +60,7 @@ const Expendeture = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "jwt_token":
+        jwt_token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjg0NjUzODY4LCJleHAiOjE2ODQ2NTc0Njh9.WYXnIH8TVI6itmhoe178Wca_-sXWkcy8pnTeU_FW5c0",
         // jwt_token:
         //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
@@ -125,7 +125,11 @@ const Expendeture = () => {
                     onChange={(e) => setloan_amount(e.target.value)}
                   />
                 </div>
-                <button className="change-password" onClick={increaseLoan}>
+                <button
+                  className="change-password"
+                  // onClick={increaseLoan}
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
                 {/* <!-- <div className="notification">!</div> --> */}
@@ -177,7 +181,11 @@ const Expendeture = () => {
                   </div>
                 </div>
               </div>
-              <button className="change-password" onClick={increaseCard}>
+              <button
+                className="change-password"
+                // onClick={increaseCard}
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
             </div>
@@ -222,7 +230,11 @@ const Expendeture = () => {
                   />
                 </div>
               </div>
-              <button className="change-password" onClick={increaseStock}>
+              <button
+                className="change-password"
+                // onClick={increaseStock}
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
               <hr className="myhre" />
@@ -263,7 +275,11 @@ const Expendeture = () => {
                   />
                 </div>
               </div>
-              <button className="change-password" onClick={increaseMF}>
+              <button
+                className="change-password"
+                // onClick={increaseMF}
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
             </div>
