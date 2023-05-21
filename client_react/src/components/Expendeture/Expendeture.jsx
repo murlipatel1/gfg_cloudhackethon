@@ -24,6 +24,59 @@ const Expendeture = () => {
   const increaseMF = () => {
     setMFCounter(mfCounter + 1);
   };
+
+  // ---------------------------
+
+  const [loan_id, setloan_id] = useState(""); // State for expected amount input
+  const [ifsc_code, setifsc_code] = useState(""); // State for loan amount input
+  const [loan_amount, setloan_amount] = useState(""); // State for loan balance input
+  const [card_type, setcard_type] = useState(""); // State for loan period input
+  const [card_number, setcard_number] = useState(""); // State for expected amount input
+  const [card_amount, setcard_amount] = useState(""); // State for loan amount input
+  const [stock_name, setstock_name] = useState(""); // State for loan balance input
+  const [stock_price, setstock_price] = useState(""); // State for loan period input
+  const [mf_name, setmf_name] = useState(""); // State for loan balance input
+  const [mf_price, setmf_price] = useState(""); // State for loan period input
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Create a data object with the form values
+    const edata = {
+      loan_id,
+      ifsc_code,
+      loan_amount,
+      card_type,
+      card_number,
+      card_amount,
+      stock_name,
+      stock_price,
+      mf_name,
+      mf_price,
+    };
+
+    // Make the fetch request with the POST method
+    fetch("http://localhost:5000/expenditure/exp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "jwt_token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjg0NjUzODY4LCJleHAiOjE2ODQ2NTc0Njh9.WYXnIH8TVI6itmhoe178Wca_-sXWkcy8pnTeU_FW5c0",
+        // jwt_token:
+        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
+      },
+      body: JSON.stringify(edata),
+    })
+      .then(async (response) => {
+        let resp = response.json();
+        console.log(resp);
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+      });
+  };
+
   return (
     <>
       <header>
@@ -43,11 +96,23 @@ const Expendeture = () => {
                 <br />
                 <div className="sub-container">
                   <label for="name">Loan Id:</label>
-                  <input type="text" id="loanid" name="loanid" />
+                  <input
+                    type="text"
+                    id="loanid"
+                    name="loanid"
+                    value={loan_id}
+                    onChange={(e) => setloan_id(e.target.value)}
+                  />
                 </div>
                 <div className="sub-container">
                   <label for="ifsc">Ifsc Code:</label>
-                  <input type="text" id="ifsc" name="ifsc" />
+                  <input
+                    type="text"
+                    id="ifsc"
+                    name="ifsc"
+                    value={ifsc_code}
+                    onChange={(e) => setifsc_code(e.target.value)}
+                  />
                 </div>
                 <div className="sub-container">
                   <label for="email">Loan Amount:</label>
@@ -56,6 +121,8 @@ const Expendeture = () => {
                     id="loanamount"
                     name="loanamount"
                     placeholder="Rs"
+                    value={loan_amount}
+                    onChange={(e) => setloan_amount(e.target.value)}
                   />
                 </div>
                 <button className="change-password" onClick={increaseLoan}>
@@ -77,6 +144,8 @@ const Expendeture = () => {
                       id="cardType"
                       name="cardType"
                       className="dropbox-menu"
+                      value={card_type}
+                      onChange={(e) => setcard_type(e.target.value)}
                     >
                       <option value="visa">Visa</option>
                       <option value="mastercard">Mastercard</option>
@@ -91,6 +160,8 @@ const Expendeture = () => {
                       id="number"
                       name="number"
                       maxLength={16}
+                      value={card_number}
+                      onChange={(e) => setcard_number(e.target.value)}
                     />
                   </div>
                   <div className="sub-container">
@@ -100,6 +171,8 @@ const Expendeture = () => {
                       id="card_amount"
                       name="card_amount"
                       placeholder="Rs"
+                      value={card_amount}
+                      onChange={(e) => setcard_amount(e.target.value)}
                     />
                   </div>
                 </div>
@@ -119,7 +192,13 @@ const Expendeture = () => {
                 <br />
                 <div className="sub-container">
                   <label for="name">Stock Name:</label>
-                  <input type="text" id="stock_name" name="stock_name" />
+                  <input
+                    type="text"
+                    id="stock_name"
+                    name="stock_name"
+                    value={stock_name}
+                    onChange={(e) => setstock_name(e.target.value)}
+                  />
                 </div>
                 <div className="sub-container">
                   <label for="phone"> Stock Price:</label>
@@ -128,6 +207,8 @@ const Expendeture = () => {
                     id="stock_price"
                     name="stock_price"
                     placeholder="Rs"
+                    value={stock_price}
+                    onChange={(e) => setstock_price(e.target.value)}
                   />
                 </div>
                 <div className="sub-container">
@@ -152,7 +233,13 @@ const Expendeture = () => {
                 <br />
                 <div className="sub-container">
                   <label for="name">Stock Name:</label>
-                  <input type="text" id="mf_name" name="mf_name" />
+                  <input
+                    type="text"
+                    id="mf_name"
+                    name="mf_name"
+                    value={mf_name}
+                    onChange={(e) => setmf_name(e.target.value)}
+                  />
                 </div>
                 <div className="sub-container">
                   <label for="phone"> Stock Price:</label>
@@ -161,6 +248,8 @@ const Expendeture = () => {
                     id="mf-price"
                     name="mf-price"
                     placeholder="Rs"
+                    value={mf_price}
+                    onChange={(e) => setmf_price(e.target.value)}
                   />
                 </div>
                 <div className="sub-container">
@@ -180,7 +269,9 @@ const Expendeture = () => {
             </div>
           </div>
           <div className="sub-container buttonalignment">
-            <button className="change-password">Save Changes</button>
+            <button className="change-password" onClick={handleSubmit}>
+              Save Changes
+            </button>
             <button className="delete-account">Discard Changes</button>
           </div>
         </div>
