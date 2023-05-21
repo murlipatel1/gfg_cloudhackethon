@@ -16,7 +16,7 @@ const User = () => {
   return (
     <>
       <header>
-        <Navbar active={"users"} />
+        {/* <Navbar active={"users"} /> */}
         <SideBar active={"users"} />
       </header>
       <div className="body4">

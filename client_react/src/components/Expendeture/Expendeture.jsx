@@ -60,8 +60,7 @@ const Expendeture = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "jwt_token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjg0NjUzODY4LCJleHAiOjE2ODQ2NTc0Njh9.WYXnIH8TVI6itmhoe178Wca_-sXWkcy8pnTeU_FW5c0",
+        "jwt_token": localStorage.getItem("jwt_token")
         // jwt_token:
         //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
       },

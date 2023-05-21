@@ -45,16 +45,13 @@ router.post("/login", validInfo, async (req, res) => {
     if (user.rows.length === 0) {
       return res.status(401).json("Invalid Credential");
     }
-
     const validPassword = await bcrypt.compare(
       password,
       user.rows[0].user_password
     );
-
     if (!validPassword) {
       return res.status(401).json("Invalid Credential");
     }
-
     const jwtToken = jwtGenerator(user.rows[0].user_id);
     return res.json({ jwtToken });
   } catch (err) {
