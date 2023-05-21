@@ -1,8 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./user.css";
 import SideBar from "../SideBar/SideBar";
 import Navbar from "../Navbar/navbar";
+
+/*
+  To Do: 
+  1) Add UseState Based Variables --> Half Done. Now to add in form
+  2) create method to send a post request to backend
+
+  Required Variables:
+  1) Name  --> user_name(String) --> variable_name == name
+  2) Phone  --> int --> variable_name == phonenumber 
+  3) Date Of Birth --> date --> variable_name == dob
+  4) Email --> email(String) --> variable_name == email
+  5) Address 1 --> string --> vname(variable_name) == add1 
+  6) Address 2 --> String --> vname == add2
+  7) Aadhar VID --> int --> vname == aadharvid
+  8) PAN --> int --> vname == pannumber
+*/
+
 const User = () => {
+
+  let navigate = useNavigate();
+
+  //Variables as useState-based variables
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phonenumber, setPhoneNumber] = useState(0) 
+  const [dob, setDob] = useState()  //figure out a way to useState with dates
+  const [add1, setAdd1] = useState("")
+  const [add2, setAdd2] = useState("")
+  const [aadharvid, setAadharvid] = useState(0)
+  const [pannumber, setPannumber] = useState(0)
+
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -25,35 +56,44 @@ const User = () => {
           <h1 className="">User Profile</h1>
           <div className="sub-container1">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" />
+            <input type="text" id="name" name="name" 
+            value={name} onChange={(e) => setName(e.target.value)}/>
 
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" maxlength="10" />
+            <input type="tel" id="phone" name="phone" maxlength="10" 
+            value={phonenumber} onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
           <div className="sub-container1">
             <label for="date" className="date-label">
               Date Of Birth:
             </label>
-            <input type="date" id="date" name="date" />
+            <input type="date" id="date" name="date" 
+            value={dob} onChange={(e) => setDob(e.target.value)} />
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
             {/* <textarea id="address" name="address"></textarea> */}
           </div>
           <div className="sub-container1">
             <label for="address">Address 1:</label>
-            <input type="text" id="address" name="address" />
+            <input type="text" id="address" name="address" 
+            value={add1} onChange={(e) => setAdd1(e.target.value)}/>
 
             <label for="address">Address 2:</label>
-            <input type="text" id="address" name="address" />
+            <input type="text" id="address" name="address" 
+            value={add2} onChange={(e) => setAdd2(e.target.value)}/>
             {/* <textarea id="address" name="address"></textarea> */}
           </div>
           <div className="sub-container1">
             <label for="aadhar">Aadhar VID:</label>
-            <input type="text" id="aadhar" name="aadhar" maxlength="16" />
+            <input type="text" id="aadhar" name="aadhar" maxlength="16" 
+            value={aadharvid} onChange={(e) => setAadharvid(e.target.value)}/>
 
             <label for="pan">PAN:</label>
-            <input type="text" id="pan" name="pan" maxlength="10" />
+            <input type="text" id="pan" name="pan" maxlength="10" 
+            value={pannumber} onChange={(e) => setPannumber(e.target.value)}/>
           </div>
 
           <div onClick={handleOpenModal} className="notification">
