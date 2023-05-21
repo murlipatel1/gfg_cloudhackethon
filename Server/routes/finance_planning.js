@@ -2,6 +2,8 @@ const router = require("express").Router();
 const authorize = require("../middleware/authorize");
 const pool = require("../db");
 
+// check your table names according to the postgresql configuration
+
 // to get all data
 router.get("/", authorize, async (req, res) => {
     try {
@@ -23,7 +25,7 @@ router.post("/todos", authorize, async (req, res) => {
     console.log(req.body);
     const { Bike_amount, Car_amount, Home_amount, Loan_with_interest } = req.body;
     const newTodo = await pool.query(
-      "INSERT INTO todos (user_id, Bike_amount, Car_amount, Home_amount, Loan_with_interest) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      "INSERT INTO finance_planning (user_id, Bike_amount, Car_amount, Home_amount, Loan_with_interest) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [req.user.id, Bike_amount, Car_amount, Home_amount, Loan_with_interest]
     );
 

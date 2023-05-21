@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./plan.css";
 import SideBar from "../SideBar/SideBar";
 import Navbar from "../Navbar/navbar";
 
 const Plan = () => {
+  const [Bike_amount, setBike_amount] = useState(""); // State for expected amount input
+  const [Car_amount, setCar_amount] = useState(""); // State for loan amount input
+  const [Home_amount, setHome_amount] = useState(""); // State for loan balance input
+  const [Loan_with_interest, setLoan_with_interest] = useState(""); // State for loan period input
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Create a data object with the form values
+    const data = {
+      Bike_amount,
+       Car_amount,
+       Home_amount,
+       Loan_with_interest
+    };
+
+    // Make the fetch request with the POST method
+    fetch("http://localhost:5000/finance/todos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "jwt_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o"
+      },
+      body: JSON.stringify(data),
+    })
+      .then(async(response) => {
+        let resp = response.json();
+        console.log(resp)
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+      });
+  };
+
+
   return (
     <>
-    <header>
-      <Navbar active={"plan"} />
-      <SideBar active={"plan"} />
+      <header>
+        <Navbar active={"plan"} />
+        <SideBar active={"plan"} />
       </header>
       <div className="body2p html1">
         <div className="containerp">
@@ -23,6 +59,8 @@ const Plan = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
+                    value={Bike_amount}
+                    onChange={(e) => setBike_amount(e.target.value)}
                   />
                 </div>
                 <div className="row">
@@ -42,6 +80,8 @@ const Plan = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
+                    value={Car_amount}
+                    onChange={(e) => setCar_amount(e.target.value)}
                   />
                 </div>
                 <div className="row">
@@ -63,6 +103,8 @@ const Plan = () => {
                     id="expected-amount"
                     name="expected-amount"
                     placeholder="Rs"
+                    value={Home_amount}
+                    onChange={(e) => setHome_amount(e.target.value)}
                   />
                 </div>
                 <div className="row">
@@ -82,6 +124,8 @@ const Plan = () => {
                     id="amount"
                     name="amount"
                     placeholder="Rs"
+                    value={Loan_with_interest}
+                    onChange={(e) => setLoan_with_interest(e.target.value)}
                   />
                 </div>
                 <div className="row">
@@ -106,11 +150,11 @@ const Plan = () => {
             </div>
           </div>
           <div className="calculatorpp">
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       </div>
-      
+
     </>
   );
 };
