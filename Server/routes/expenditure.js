@@ -7,7 +7,7 @@ const validInfo = require("../middleware/validInfo");
 const jwtGenerator = require("../utils/jwtGenerator");
 const jwtAuth = require("../routes/jwtAuth");
 
-// to get all data
+// to get all data : WORKING
 router.get("/", authorize, async (req, res) => {
   try {
     // get todo name and description for a specified user id
@@ -19,13 +19,13 @@ router.get("/", authorize, async (req, res) => {
   }
 });
 
-// to get 1 data
+// to get 1 data : WORKING
 router.get("/exp/:id", authorize, async (req, res) => {
   try {
     // get todo name and description for a specified user id
     const users = await pool.query(
       "SELECT * FROM expenditure where user_id = $1",
-      [req.user_id]
+      [req.user.id]
     );
     res.json(users.rows);
   } catch (err) {
@@ -34,7 +34,7 @@ router.get("/exp/:id", authorize, async (req, res) => {
   }
 });
 
-//NOT WORKING:create a todo, using authorize middleware
+//Add exp : WORKING
 router.post("/exp", authorize, async (req, res) => {
   try {
     console.log(req.body);
@@ -48,7 +48,7 @@ router.post("/exp", authorize, async (req, res) => {
       stock_name,
       stock_price,
       mf_name,
-      mf_price
+      mf_price,
     } = req.body;
     const newTodo = await pool.query(
       "INSERT INTO expenditure (user_id,loan_id, ifsc_code, loan_amount,card_type,card_number, card_amount,stock_name,stock_price,mf_name,mf_price) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING *",
@@ -63,7 +63,7 @@ router.post("/exp", authorize, async (req, res) => {
         stock_name,
         stock_price,
         mf_name,
-        mf_price
+        mf_price,
       ]
     );
 
@@ -73,22 +73,20 @@ router.post("/exp", authorize, async (req, res) => {
   }
 });
 
-
-
-//delete a todo
+//delete a exp
 router.delete("/exp/:id", authorize, async (req, res) => {
   try {
     const { id } = req.params;
     const deleteTodo = await pool.query(
       "DELETE FROM expenditure WHERE exp = $1 AND user_id = $2 RETURNING *",
-      [id, req.user_id]
+      [id, req.user.id]
     );
 
     if (deleteTodo.rows.length === 0) {
-      return res.json("This todo is not yours");
+      return res.json("This exp is not yours");
     }
 
-    res.json("Todo was deleted");
+    res.json("Exp was deleted");
   } catch (err) {
     console.error(err.message);
   }
