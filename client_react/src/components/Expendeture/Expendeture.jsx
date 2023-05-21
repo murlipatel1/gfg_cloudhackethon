@@ -27,16 +27,16 @@ const Expendeture = () => {
 
   // ---------------------------
 
-  const [loan_id, setloan_id] = useState(""); // State for expected amount input
-  const [ifsc_code, setifsc_code] = useState(""); // State for loan amount input
-  const [loan_amount, setloan_amount] = useState(""); // State for loan balance input
-  const [card_type, setcard_type] = useState(""); // State for loan period input
-  const [card_number, setcard_number] = useState(""); // State for expected amount input
-  const [card_amount, setcard_amount] = useState(""); // State for loan amount input
-  const [stock_name, setstock_name] = useState(""); // State for loan balance input
-  const [stock_price, setstock_price] = useState(""); // State for loan period input
-  const [mf_name, setmf_name] = useState(""); // State for loan balance input
-  const [mf_price, setmf_price] = useState(""); // State for loan period input
+  const [loan_id, setloan_id] = useState(""); // State for loan_id input
+  const [ifsc_code, setifsc_code] = useState(""); // State for ifsc_code input
+  const [loan_amount, setloan_amount] = useState(""); // State for loan_amount input
+  const [card_type, setcard_type] = useState(""); // State for card_type input
+  const [card_number, setcard_number] = useState(""); // State forcard_number input
+  const [card_amount, setcard_amount] = useState(""); // State for card_amount input
+  const [stock_name, setstock_name] = useState(""); // State for stock_name input
+  const [stock_price, setstock_price] = useState(""); // State for stock_price input
+  const [mf_name, setmf_name] = useState(""); // State for mf_name input
+  const [mf_price, setmf_price] = useState(""); // State for mf_price input
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
@@ -61,7 +61,7 @@ const Expendeture = () => {
       headers: {
         "Content-Type": "application/json",
         jwt_token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjg0NjUzODY4LCJleHAiOjE2ODQ2NTc0Njh9.WYXnIH8TVI6itmhoe178Wca_-sXWkcy8pnTeU_FW5c0",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjg0NjUzOTIyLCJleHAiOjE2ODQ2NTc1MjJ9.GOKdNg4f1fhdkDwmPQ7quau2kru2X5h_aP0pBaG4sGw",
         // jwt_token:
         //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
       },
