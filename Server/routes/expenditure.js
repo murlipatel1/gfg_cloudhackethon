@@ -48,12 +48,12 @@ router.post("/exp", authorize, async (req, res) => {
       stock_name,
       stock_price,
       mf_name,
-      mf_price,
+      mf_price
     } = req.body;
     const newTodo = await pool.query(
       "INSERT INTO expenditure (user_id,loan_id, ifsc_code, loan_amount,card_type,card_number, card_amount,stock_name,stock_price,mf_name,mf_price) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING *",
       [
-        req.user_id,
+        req.user.id,
         loan_id,
         ifsc_code,
         loan_amount,
@@ -63,7 +63,7 @@ router.post("/exp", authorize, async (req, res) => {
         stock_name,
         stock_price,
         mf_name,
-        mf_price,
+        mf_price
       ]
     );
 
@@ -72,6 +72,8 @@ router.post("/exp", authorize, async (req, res) => {
     console.error(err.message);
   }
 });
+
+
 
 //delete a todo
 router.delete("/exp/:id", authorize, async (req, res) => {

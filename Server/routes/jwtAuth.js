@@ -13,7 +13,7 @@ router.post("/register", validInfo, async (req, res) => {
   const { email, name, password ,phonenumber} = req.body;
 
   try {
-    const user = await pool.query("SELECT * FROM userss WHERE user_email = $1", [email]);
+    const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [email]);
 
     if (user.rows.length > 0) {
       return res.status(401).json("User already exist!");
@@ -23,7 +23,7 @@ router.post("/register", validInfo, async (req, res) => {
     const bcryptPassword = await bcrypt.hash(password, salt);
 
     let newUser = await pool.query(
-      "INSERT INTO userss(user_name, user_email, user_password , phonenumber) VALUES ($1, $2, $3,$4) RETURNING *",
+      "INSERT INTO users(user_name, user_email, user_password , phonenumber) VALUES ($1, $2, $3,$4) RETURNING *",
       [name, email, bcryptPassword,phonenumber]
     );
 
