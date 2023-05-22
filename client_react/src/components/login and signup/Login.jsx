@@ -32,27 +32,44 @@ const Login = () => {
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
 
+    // if (password === secPassword) {
+    //   const data = JSON.stringify({ "name": name, "email": email, "password": password,"phonenumber":phonenumber });
+    //   const options = {
+    //     headers: { "content-type": "application/json" }
+    //   }
+
+    //   let j = null;
+    //   axios.post("http://localhost:5000/authentication/register", data, options)
+    //     .then(async (response)=> {
+    //       console.log(response);
+    //       j = await response.json()
+    //       console.log(j)
+    //       if (j.jwtToken) {
+    //         localStorage.setItem('jwt_token', j.jwtToken)
+    //         navigate("/users")
+    //       } else {
+    //         navigate("/login")
+    //       }
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // }
     if (password === secPassword) {
-      const data = JSON.stringify({
-        name: name,
-        email: email,
-        password: password,
-        phonenumber: phonenumber,
-      });
+      const data = JSON.stringify({ "name": name, "email": email, "password": password,"phonenumber":phonenumber });
       const options = {
-        headers: { "content-type": "application/json" },
-      };
+        headers: { "content-type": "application/json" }
+      }
 
       let j = null;
-      axios
-        .post("http://localhost:5000/authentication/register", data, options)
-        .then(async (response) => {
+      axios.post("http://localhost:5000/authentication/register", data, options)
+        .then(async (response)=> {
           console.log(response);
           j = await response.json();
           console.log(j);
           if (j.jwtToken) {
-            localStorage.setItem("jwt_token", j.jwtToken);
-            navigate("/users");
+            localStorage.setItem('jwt_token', j.jwtToken)
+            navigate("/users")
           } else {
             navigate("/login");
           }
@@ -61,7 +78,7 @@ const Login = () => {
           console.log(error);
         });
     }
-  };
+  }
 
   //make handle login submit section
   const handleLoginSubmit = async (e) => {
