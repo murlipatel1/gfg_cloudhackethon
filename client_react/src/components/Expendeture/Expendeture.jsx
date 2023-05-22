@@ -313,7 +313,7 @@ const Expendeture = () => {
               <button
                 className="change-password"
                 // onClick={increaseMF}
-                onClick={(e)=>{handleSubmit, totalprice}}
+                onClick={totalprice}
               >
                 Submit
               </button>
