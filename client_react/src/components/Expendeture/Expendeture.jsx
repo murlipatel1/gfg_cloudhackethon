@@ -9,22 +9,9 @@ const Expendeture = () => {
   const [stockCounter, setStockCounter] = useState(0);
   const [mfCounter, setMFCounter] = useState(0);
 
-  const increaseLoan = () => {
-    setLoanCounter(loanCounter + 1);
-  };
-
-  const increaseCard = () => {
-    setCardCounter(cardCounter + 1);
-  };
-
-  const increaseStock = () => {
-    setStockCounter(stockCounter + 1);
-  };
-
-  const increaseMF = () => {
-    setMFCounter(mfCounter + 1);
-  };
-
+  //----------------------------
+  const [total_stock_price, settotal_stock_price] = useState("");
+  const [total_mf_price, settotal_mf_price] = useState("");
   // ---------------------------
 
   const [loan_id, setloan_id] = useState(""); // State for loan_id input
@@ -51,28 +38,51 @@ const Expendeture = () => {
       card_amount,
       stock_name,
       stock_price,
+      total_stock_price, // total stock price
       mf_name,
       mf_price,
+      total_mf_price, // total mf price
     };
 
     // Make the fetch request with the POST method
-    fetch("http://localhost:5000/expenditure/exp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        jwt_token: localStorage.getItem("jwt_token"),
-        // jwt_token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
-      },
-      body: JSON.stringify(edata),
-    })
-      .then(async (response) => {
-        let resp = response.json();
-        console.log(resp);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
+    // fetch("http://localhost:5000/expenditure/exp", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     jwt_token: localStorage.getItem("jwt_token"),
+    //     // jwt_token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY4NDY0MTU0MywiZXhwIjoxNjg0NjQ1MTQzfQ.yzxUPA0U_Z8_JEkWv7R6epJrUXWaBXgqo6pk2OqkW1o",
+    //   },
+    //   body: JSON.stringify(edata),
+    // })
+    //   .then(async (response) => {
+    //     let resp = response.json();
+    //     console.log(resp);
+    //   })
+    //   .catch((error) => {
+    //     // Handle any errors
+    //     console.error(error);
+    //   });
+
+    try {
+      const response = await fetch("http://localhost:5000/expenditure/exp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          jwt_token: localStorage.getItem("jwt_token"),
+        },
+        body: JSON.stringify(edata),
       });
+
+      const data = await response.json();
+
+      // Update the state variables with the retrieved data
+      settotal_stock_price(data.total_stock_price);
+      settotal_mf_price(data.total_mf_price);
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -225,6 +235,8 @@ const Expendeture = () => {
                     id="total_stock_price"
                     name="total_stock_price"
                     placeholder="Rs"
+                    value={total_stock_price}
+                    onChange={(e) => settotal_stock_price(e.target.value)}
                     disabled
                   />
                 </div>
@@ -270,6 +282,8 @@ const Expendeture = () => {
                     id="total_mf_price"
                     name="total_mf_price"
                     placeholder="Rs"
+                    value={total_mf_price}
+                    onChange={(e) => settotal_mf_price(e.target.value)}
                     disabled
                   />
                 </div>
