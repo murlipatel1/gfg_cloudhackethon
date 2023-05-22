@@ -148,37 +148,6 @@ CREATE TABLE userdetails (
   pannumber int,
   dob date,
   phonenumber int,
-  FOREIGN key (user_id) references users(id)
+  FOREIGN key (user_id) references users(user_id)
 );
 
-
-
-
-
-
-
--- 
-CREATE SEQUENCE user_id_sequence START WITH 1 INCREMENT BY 1 NO MAXVALUE NO MINVALUE CACHE 1;
--- 
--- 
-ALTER TABLE users
-ALTER COLUMN user_id
-SET DEFAULT nextval('user_id_sequence');
--- 
--- 
-CREATE TABLE todos(
-  todo_id SERIAL,
-  user_id int,
-  description VARCHAR(255) NOT NULL,
-  PRIMARY KEY (todo_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
--- 
---fake users data
-insert into users (user_name, user_email, user_password)
-values ('Jacob', 'jacob@gmail.com', 'kthl8822');
--- 
---fake todos data
-insert into todos (user_id, description)
-values (1, 'clean room');
--- 
