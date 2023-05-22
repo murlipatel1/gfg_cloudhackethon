@@ -22,41 +22,46 @@ const Login = () => {
   let navigate = useNavigate();
 
   //Variables as useState-based variables
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [secPassword, setSecPassword] = useState("")
-  const [phonenumber, setPhoneNumber] = useState(0)  //useless attribute --> Not necessary but kept it as it has been kept in form
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [secPassword, setSecPassword] = useState("");
+  const [phonenumber, setPhoneNumber] = useState(0); //useless attribute --> Not necessary but kept it as it has been kept in form
 
   //make handle register submit section
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
 
     if (password === secPassword) {
-      const data = JSON.stringify({ "name": name, "email": email, "password": password,"phonenumber":phonenumber });
+      const data = JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+        phonenumber: phonenumber,
+      });
       const options = {
-        headers: { "content-type": "application/json" }
-      }
+        headers: { "content-type": "application/json" },
+      };
 
       let j = null;
-      axios.post("http://localhost:5000/authentication/register", data, options)
-        .then(async (response)=> {
+      axios
+        .post("http://localhost:5000/authentication/register", data, options)
+        .then(async (response) => {
           console.log(response);
-          j = await response.json()
-          console.log(j)
+          j = await response.json();
+          console.log(j);
           if (j.jwtToken) {
-            localStorage.setItem('jwt_token', j.jwtToken)
-            navigate("/users")
+            localStorage.setItem("jwt_token", j.jwtToken);
+            navigate("/users");
           } else {
-            navigate("/login")
+            navigate("/login");
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         });
     }
-  }
+  };
 
   //make handle login submit section
   const handleLoginSubmit = async (e) => {
@@ -76,7 +81,7 @@ const Login = () => {
     //     j = await response.json()
     //     // console.log(j)
     // console.log(j.jwtToken);
-    // if (j.jwtToken) 
+    // if (j.jwtToken)
     // {
     //     localStorage.setItem('jwt_token', j.jwtToken)
     //     navigate("/expendeture")
@@ -88,16 +93,14 @@ const Login = () => {
     //     console.log(error);
     // });
 
-    const data = JSON.stringify(
-      { 
-      "email": email,
-       "password": password
-       }
-       );
+    const data = JSON.stringify({
+      email: email,
+      password: password,
+    });
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: data
+      body: data,
     };
 
     let j = null;
@@ -108,17 +111,16 @@ const Login = () => {
         // console.log(j)
         console.log(j.jwtToken);
         if (j.jwtToken) {
-          localStorage.setItem('jwt_token', j.jwtToken)
-          navigate("/users")
+          localStorage.setItem("jwt_token", j.jwtToken);
+          navigate("/users");
         } else {
-          navigate("/login")
+          navigate("/login");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-
-  }
+  };
 
   //const [input1Value, setInput1Value] = useState("");
   //const [input2Value, setInput2Value] = useState("");
@@ -235,7 +237,13 @@ const Login = () => {
                       />
                       {/* //text to ntext */}
                       {/*adding email variable made above in the form*/}
-                      <input type="etext" placeholder="Email-Id" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                      <input
+                        type="etext"
+                        placeholder="Email-Id"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                     </div>
                     <div className="input-box">
                       <Icon
@@ -244,7 +252,13 @@ const Login = () => {
                         className="text-3xl"
                       />
                       {/*adding password variable made above in the form*/}
-                      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                      />
                     </div>
 
                     <div className="text">
@@ -288,7 +302,7 @@ const Login = () => {
                         name="name"
                         placeholder="Name"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}  //adding name variable made above in the form
+                        onChange={(e) => setName(e.target.value)} //adding name variable made above in the form
                         required
                       />
                     </div>
@@ -300,11 +314,12 @@ const Login = () => {
                         className="text-3xl"
                       />
                       <input
-                        type="number"
+                        type="tel"
+                        style={{ backgroundColor: "#fff" }}
                         name="phoneNumber"
                         placeholder="Phone"
                         value={phonenumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}  //adding phoneNumber variable made above in the for
+                        onChange={(e) => setPhoneNumber(e.target.value)} //adding phoneNumber variable made above in the for
                         required
                       />
                     </div>
@@ -320,7 +335,7 @@ const Login = () => {
                         name="email"
                         placeholder="Email-Id"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}  //adding email variable made above in the form
+                        onChange={(e) => setEmail(e.target.value)} //adding email variable made above in the form
                         required
                       />
                     </div>
@@ -359,14 +374,16 @@ const Login = () => {
                         placeholder="Confirm Password"
                         name="secPassword"
                         value={secPassword}
-                        onChange={(e) => setSecPassword(e.target.value)}  //adding second password variable made above in the form
+                        onChange={(e) => setSecPassword(e.target.value)} //adding second password variable made above in the form
                       />
                     </div>
 
                     <div className="button input-box">
-                      <input type="submit"
-                        //value="Register" 
-                        onClick={handleRegisterSubmit} />
+                      <input
+                        type="submit"
+                        //value="Register"
+                        onClick={handleRegisterSubmit}
+                      />
                     </div>
 
                     <div className="text login-text">
