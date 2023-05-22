@@ -100,6 +100,7 @@ const Expendeture = () => {
                     name="loanid"
                     value={loan_id}
                     onChange={(e) => setloan_id(e.target.value)}
+                    
                   />
                 </div>
                 <div className="sub-container">
