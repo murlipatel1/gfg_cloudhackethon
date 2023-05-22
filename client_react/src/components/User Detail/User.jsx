@@ -1,8 +1,40 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./user.css";
 import SideBar from "../SideBar/SideBar";
 import Navbar from "../Navbar/navbar";
+import axios from "axios";
+
+/*
+  To Do: 
+  1) Add UseState Based Variables --> Done. Added in form as well.
+  2) Create method to send a post request to Backend --> Done. Added method in both frontend and backend as well.
+
+  Required Variables:
+  1) Name  --> user_name(String) --> variable_name == name
+  2) Phone  --> int --> variable_name == phonenumber 
+  3) Date Of Birth --> date --> variable_name == dob
+  4) Email --> email(String) --> variable_name == email
+  5) Address 1 --> string --> vname(variable_name) == add1 
+  6) Address 2 --> String --> vname == add2
+  7) Aadhar VID --> int --> vname == aadharvid
+  8) PAN --> int --> vname == pannumber
+*/
+
 const User = () => {
+
+  let navigate = useNavigate();
+
+  //Variables as useState-based variables
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phonenumber, setPhoneNumber] = useState()
+  const [dob, setDob] = useState(new Date())  //not sure if this will work. Do check once.
+  const [add1, setAdd1] = useState("")
+  const [add2, setAdd2] = useState("")
+  const [aadharvid, setAadharvid] = useState()
+  const [pannumber, setPannumber] = useState()
+
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -13,10 +45,74 @@ const User = () => {
     setShowModal(false);
   };
 
+  const handleSave = (e) => {
+    e.preventDefault();
+    let add = add1 + add2
+    // const data = JSON.stringify({"user_name": name, "email": email, "phonenumber": phonenumber, "dob": dob, "address": add, "aadharvid": aadharvid, "pannumber": pannumber });
+    // const options = {
+    //   headers: {
+    //     "content-type": "application/json",
+    //     "jwt_token": localStorage.getItem('jwt_token')
+    //     // "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjg0NzQxOTk4fQ.k0rH02bN6FYql7D3cyS9aSjm8Av1tlODCuiqY2zVc5Q"
+    //   }
+    // }
+
+    // let j = null;
+    // axios.post("http://localhost:5000/userdetails/addinfo", data, options)
+    //   .then(async (response) => {
+    //     console.log(response);
+    //     j = await response.json()
+    //     console.log(j)
+    //     if (j) {
+    //       console.log("Success")
+    //     }
+    //     navigate("/expendeture")
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+    const data = JSON.stringify({
+      "user_name": name,
+      "email": email,
+      "phonenumber": phonenumber,
+      "dob": dob,
+      "address": add,
+      "aadharvid": aadharvid,
+      "pannumber": pannumber
+    });
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json",
+        "jwt_token": localStorage.getItem('jwt_token')
+        // "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjg0NzQxOTk4fQ.k0rH02bN6FYql7D3cyS9aSjm8Av1tlODCuiqY2zVc5Q"
+      },
+      body: data
+    };
+    
+    let j = null;
+    
+    fetch("http://localhost:5000/userdetails/addinfo", options)
+      .then(async (response) => {
+        console.log(response);
+        j = await response.json();
+        console.log(j);
+        if (j) {
+          console.log("Success");
+        }
+        navigate("/expendeture");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    
+  }
+
   return (
     <>
       <header>
-        <Navbar active={"users"} />
+        {/* <Navbar active={"users"} /> */}
         <SideBar active={"users"} />
       </header>
       <div className="body4">
@@ -25,35 +121,44 @@ const User = () => {
           <h1 className="">User Profile</h1>
           <div className="sub-container1">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" />
+            <input type="text" id="name" name="name"
+              value={name} onChange={(e) => setName(e.target.value)} />
 
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" maxlength="10" />
+            <input type="tel" id="phone" name="phone" maxlength="10"
+              value={phonenumber} onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
           <div className="sub-container1">
             <label for="date" className="date-label">
               Date Of Birth:
             </label>
-            <input type="date" id="date" name="date" />
+            <input type="date" id="date" name="date"
+              value={dob} onChange={(e) => setDob(e.target.value)} />
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
             {/* <textarea id="address" name="address"></textarea> */}
           </div>
           <div className="sub-container1">
             <label for="address">Address 1:</label>
-            <input type="text" id="address" name="address" />
+            <input type="text" id="address" name="address"
+              value={add1} onChange={(e) => setAdd1(e.target.value)} />
 
             <label for="address">Address 2:</label>
-            <input type="text" id="address" name="address" />
+            <input type="text" id="address" name="address"
+              value={add2} onChange={(e) => setAdd2(e.target.value)} />
             {/* <textarea id="address" name="address"></textarea> */}
           </div>
           <div className="sub-container1">
             <label for="aadhar">Aadhar VID:</label>
-            <input type="text" id="aadhar" name="aadhar" maxlength="16" />
+            <input type="text" id="aadhar" name="aadhar" maxlength="16"
+              value={aadharvid} onChange={(e) => setAadharvid(e.target.value)} />
 
             <label for="pan">PAN:</label>
-            <input type="text" id="pan" name="pan" maxlength="10" />
+            <input type="text" id="pan" name="pan" maxlength="10"
+              value={pannumber} onChange={(e) => setPannumber(e.target.value)} />
           </div>
 
           <div onClick={handleOpenModal} className="notification">
@@ -124,7 +229,8 @@ const User = () => {
           </div>
 
           <div className="sub-container2">
-            <button className="change-password"> Save </button>
+            {/* Clicking the button will trigger the method and will send a request to backend */}
+            <button className="change-password" onClick={handleSave}> Save </button>
           </div>
           {/* </div> */}
           <hr className="myhr" />

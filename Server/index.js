@@ -8,6 +8,7 @@ app.use(express.json());
 
 //routes
 app.use("/authentication", require("./routes/jwtAuth"));
+app.use("/userdetails", require("./routes/userdetails"));
 // app.use("/dashboard", require("./routes/dashboard"));
 
 app.use('/expenditure',require("./routes/expenditure"));
