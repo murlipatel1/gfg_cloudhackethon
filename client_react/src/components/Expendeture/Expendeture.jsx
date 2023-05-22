@@ -28,6 +28,33 @@ const Expendeture = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
 
+    if(loan_id===""){
+      setloan_id(0);
+    }
+    if(ifsc_code===""){
+      setifsc_code(0);
+    }
+    if(loan_amount===""){
+      setloan_amount(0);
+    }
+    if(card_number===""){
+      setcard_number(0)
+    }
+    if(card_amount===""){
+      setcard_amount(0)
+    }
+    if(stock_price===""){
+      setstock_price(0)
+    }
+    if(mf_price===""){
+      setmf_price(0)
+    }
+    if(total_stock_price===""){
+      settotal_stock_price(0);
+    }
+    if(total_mf_price===""){
+      settotal_mf_price(0);
+    }
     // Create a data object with the form values
     const edata = {
       loan_id,
