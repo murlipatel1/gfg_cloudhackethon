@@ -76,6 +76,27 @@ const Expendeture = () => {
       const data = await response.json();
 
       // Update the state variables with the retrieved data
+      
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const totalprice = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/expenditure/exp", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          jwt_token: localStorage.getItem("jwt_token"),
+        }
+      });
+      const data = await response.json();
+
+      // Update the state variables with the retrieved data
       settotal_stock_price(data.total_stock_price);
       settotal_mf_price(data.total_mf_price);
 
@@ -83,7 +104,8 @@ const Expendeture = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  
+  }
 
   return (
     <>

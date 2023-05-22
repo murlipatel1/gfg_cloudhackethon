@@ -8,27 +8,16 @@ const jwtGenerator = require("../utils/jwtGenerator");
 const jwtAuth = require("../routes/jwtAuth");
 
 //New Request
-router.get("/exp/:id", authorize, async (req, res) => {
+router.get("/expen/", authorize, async (req, res) => {
   try {
-    const stockPriceQuery = `
-      SELECT SUM(stock_price) AS total_stock_price
-      FROM expenditure
-      WHERE user_id = $1
-    `;
-
-    const mfPriceQuery = `
-      SELECT SUM(mf_price) AS total_mf_price
-      FROM expenditure
-      WHERE user_id = $1
-    `;
-
-    const stockPriceResult = await pool.query(stockPriceQuery, [req.user.id]);
-    const mfPriceResult = await pool.query(mfPriceQuery, [req.user.id]);
+    // console.log(req.user.id);
+    const stockPriceResult = await pool.query("SELECT SUM(stock_price) AS total_stock_price FROM expenditure WHERE user_id=$1", [req.user.id]);
+    const mfPriceResult = await pool.query("SELECT SUM(mf_price) AS total_mf_price FROM expenditure WHERE user_id= $1", [req.user.id]);
 
     const totalStockPrice = stockPriceResult.rows[0].total_stock_price;
     const totalMFPrice = mfPriceResult.rows[0].total_mf_price;
 
-    res.json({ total_stock_price: totalStockPrice, total_mf_price: totalMFPrice });
+    res.json({ "total_stock_price": totalStockPrice, "total_mf_price": totalMFPrice });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
