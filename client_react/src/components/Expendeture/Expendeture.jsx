@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./expendeture.css";
 import SideBar from "../SideBar/SideBar";
 import Navbar from "../Navbar/navbar";
+import { Icon } from '@iconify/react';
 
 const Expendeture = () => {
-  const [loanCounter, setLoanCounter] = useState(0);
-  const [cardCounter, setCardCounter] = useState(0);
-  const [stockCounter, setStockCounter] = useState(0);
-  const [mfCounter, setMFCounter] = useState(0);
+  const [loanCounter, setLoanCounter] = useState("");
+  const [cardCounter, setCardCounter] = useState("");
+  const [stockCounter, setStockCounter] = useState("");
+  const [mfCounter, setMFCounter] = useState("");
 
   //----------------------------
   const [total_stock_price, settotal_stock_price] = useState("");
@@ -54,6 +55,12 @@ const Expendeture = () => {
     }
     if(total_mf_price===""){
       settotal_mf_price(0);
+    }
+    if(stock_name===""){
+      setstock_name(null);
+    }
+    if(mf_name===""){
+      setmf_name(null);
     }
     // Create a data object with the form values
     const edata = {
@@ -148,7 +155,10 @@ const Expendeture = () => {
               <hr className="myhr" />
               <div>
                 <h2>
-                  Loan <span className="counter">{loanCounter}</span>
+                  Loan💰 
+                  <span className="counter">
+                  {/* {loanCounter} */}
+                  </span>
                 </h2>
                 <br />
                 <div className="sub-container">
@@ -195,7 +205,11 @@ const Expendeture = () => {
                 <hr className="myhre" />
                 <div className="">
                   <h2>
-                    Cards <span className="counter">{cardCounter}</span>
+                    Cards💳 
+                    <span className="counter">
+                    {/* <Icon icon="fxemoji:creditcard" color="#002b5b" width="30" height="30" /> */}
+                    {/* {cardCounter} */}
+                    </span>
                   </h2>
                   <br />
                   <div className="sub-container">
@@ -253,7 +267,10 @@ const Expendeture = () => {
               <hr className="myhr" />
               <div>
                 <h2>
-                  Stock <span className="counter">{stockCounter}</span>
+                  Stock <span className="counter">
+                  {<Icon icon="arcticons:vndirect-dstock" color="#002b5b" width="30" height="30" />}
+                  {/* {stockCounter} */}
+                  </span>
                 </h2>
                 <br />
                 <div className="sub-container">
@@ -300,7 +317,11 @@ const Expendeture = () => {
               <hr className="myhre" />
               <div>
                 <h2>
-                  Mutual Funds <span className="counter">{mfCounter}</span>
+                  Mutual Funds 
+                  <span className="counter">
+                  <Icon icon="ant-design:stock-outlined" color="#002b5b" width="30" height="30" />
+                  {/* {mfCounter} */}
+                  </span>
                 </h2>
                 <br />
                 <div className="sub-container">
