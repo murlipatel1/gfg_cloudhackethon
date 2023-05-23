@@ -5,10 +5,10 @@ import Navbar from "../Navbar/navbar";
 import { Icon } from '@iconify/react';
 
 const Expendeture = () => {
-  const [loanCounter, setLoanCounter] = useState("");
-  const [cardCounter, setCardCounter] = useState("");
-  const [stockCounter, setStockCounter] = useState("");
-  const [mfCounter, setMFCounter] = useState("");
+  // const [loanCounter, setLoanCounter] = useState("");
+  // const [cardCounter, setCardCounter] = useState("");
+  // const [stockCounter, setStockCounter] = useState("");
+  // const [mfCounter, setMFCounter] = useState("");
 
   //----------------------------
   const [total_stock_price, settotal_stock_price] = useState("");

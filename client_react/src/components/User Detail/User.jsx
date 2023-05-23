@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./user.css";
 import SideBar from "../SideBar/SideBar";
-import Navbar from "../Navbar/navbar";
-import axios from "axios";
+// import Navbar from "../Navbar/navbar";
+// import axios from "axios";
 
 /*
   To Do: 
