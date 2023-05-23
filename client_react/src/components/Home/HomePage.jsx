@@ -50,6 +50,7 @@ export default function HomePage(props) {
           <div className="container">
             <div className="hero-content">
               <h1>Welcome to Cloud Capitalists!</h1>
+              <h2 style={{ marginBottom: '20px' }}>...<i>a new era of finance</i></h2>
               <p>
                 We provide innovative solutions to help you manage your finances
                 and achieve your financial goals.
@@ -64,19 +65,19 @@ export default function HomePage(props) {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h2>About Cloud Capitalists</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                  suscipit eleifend mauris ac consectetur. Donec quis sem ut
-                  magna interdum venenatis.
+                <h2 style={{ marginLeft: '20px' }}>About Cloud Capitalists</h2>
+                <p style={{ marginLeft: '20px' }}>
+                  Harnessing the power of the cloud, we revolutionize finance,
+                  empowering individuals and businesses to reach their true
+                  potential. Make informed decisions, capitalize on trends, and maximize returns with our intuitive interface and advanced analytics. Trust in our commitment to transparency, reliability, and security.
                 </p>
-                <p>
-                  Donec ullamcorper, dui vel fermentum aliquam, risus magna
-                  finibus velit, sed interdum est elit in leo. Morbi sit amet
-                  vulputate quam. Duis nec augue nec nulla pharetra sodales at
-                  ac nisi.
+                <p style={{ marginLeft: '20px' }}>
+                  With innovative tools, resources, and insights, navigate the
+                  complex financial world with ease. Whether managing personal
+                  finances, seeking funding, or optimizing investments, our
+                  comprehensive suite of services meets your unique needs.
                 </p>
-                <a href=" " className="btn btn-primary">
+                <a href=" " className="btn btn-primary" style={{ marginLeft: '20px' }}>
                   Learn More
                 </a>
               </div>
@@ -142,8 +143,7 @@ export default function HomePage(props) {
               <div className="col-md-4">
                 <div className="testimonial">
                   <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed ac neque nec eros vehicula consequat ut at odio."
+                    "Cloud Capitalist transformed the way I manage my finances, providing unparalleled tools and insights that have helped me achieve financial success."
                   </p>
                   <div className="testimonial-author">
                     <img src={flogo} alt="Testimonial Author" />
@@ -197,8 +197,7 @@ export default function HomePage(props) {
                   />
                   <h3>Investment Management</h3>
                   <p>
-                    Manage your finances on the go with our mobile app,
-                    available for iOS and Android devices.
+                  Maximize your investment potential with our expert-guided investment management solutions.
                   </p>
                 </div>
               </div>
@@ -211,8 +210,7 @@ export default function HomePage(props) {
                   />
                   <h3>Financial Planning</h3>
                   <p>
-                    Maximize your investment returns with our suite of
-                    investment tools and resources.
+                  Secure your financial future with our personalized and comprehensive financial planning services.
                   </p>
                 </div>
               </div>
@@ -225,8 +223,7 @@ export default function HomePage(props) {
                   />
                   <h3>Financial Calculating</h3>
                   <p>
-                    Your data is safe with us. We use the latest encryption and
-                    security technologies to protect your information.
+                  Simplify complex financial calculations effortlessly with our powerful and accurate financial calculating tools.
                   </p>
                 </div>
               </div>
@@ -279,7 +276,7 @@ export default function HomePage(props) {
                   <div className="card-header">
                     <h3>Basic</h3>
                     <div className="price">
-                      $9<span>/mo</span>
+                      Rs 99<span>/mo</span>
                     </div>
                   </div>
                   <div className="card-body">
