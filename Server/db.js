@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const { Client } = require("pg");
 
 // const pool = new Pool({
@@ -11,22 +10,22 @@ const { Client } = require("pg");
 // });
 
 // Murli
-// const pool = new Client({
-//   user: "postgres",
-//   password: "123456789",
-//   host: "localhost",
-//   port: 5432,
-//   database: "postgres"
-// });
-
-//Shruti
 const pool = new Client({
   user: "postgres",
-  password: "post@2023",
+  password: "123456789",
   host: "localhost",
   port: 5432,
-  database: "gfgdb",
+  database: "postgres"
 });
+
+//Shruti
+// const pool = new Client({
+//   user: "postgres",
+//   password: "post@2023",
+//   host: "localhost",
+//   port: 5432,
+//   database: "gfgdb",
+// });
 
 pool.connect();
 
